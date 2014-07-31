@@ -1,0 +1,55 @@
+$navbar-default-brand-color: #ff5a5f;
+
+//======================================Sass=========================================================
+.thin {
+  font-weight: 100 !important;
+}
+
+.light {
+  font-weight: 300 !important;
+}
+.navbar .navbar-brand {
+  font-size: 35px !important;
+}
+.center {
+  text-align: center;
+
+}
+.center-title-color{
+  padding-top: 300px;
+  position: relative;
+  color: #ffffff;
+}
+
+.flash-center {
+  text-align: center;
+  font-size: 30px !important;
+}
+
+label{
+  font-weight: 300 !important;
+  font-size: 16px;
+}
+
+.navbar {
+  border-radius: 0 !important;
+}
+
+.background{
+background: url("background.jpg") no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 700px;
+
+}
+.margin-nav{
+  margin-top: -20px;
+}
+
+
+
+
+
+@import "bootstrap";
