@@ -1,4 +1,22 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:100);
+@import url(http://fonts.googleapis.com/css?family=Roboto:100);
+
 $navbar-default-brand-color: #ff5a5f;
+.color-title {
+  color: #ff5a5f !important;
+}
+
+.color-title:hover {
+  color: #2C93FF !important;
+}
+
+.roboto {
+  font-family: 'Roboto', sans-serif;
+}
+
+.lato {
+  font-family: 'Lato', sans-serif;
+}
 
 //======================================Sass=========================================================
 .thin {
@@ -8,17 +26,21 @@ $navbar-default-brand-color: #ff5a5f;
 .light {
   font-weight: 300 !important;
 }
+
 .navbar .navbar-brand {
   font-size: 35px !important;
 }
+
 .center {
   text-align: center;
 
 }
-.center-title-color{
-  padding-top: 300px;
+
+.center-title-color {
+  padding-top: 250px;
   position: relative;
   color: #ffffff;
+
 }
 
 .flash-center {
@@ -26,7 +48,7 @@ $navbar-default-brand-color: #ff5a5f;
   font-size: 30px !important;
 }
 
-label{
+label {
   font-weight: 300 !important;
   font-size: 16px;
 }
@@ -35,20 +57,48 @@ label{
   border-radius: 0 !important;
 }
 
-.background{
-background: url("background.jpg") no-repeat center center;
+.background {
+  background: url("bg-desk-3.jpg") no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  height: 700px;
+  height: 600px;
 
 }
-.margin-nav{
+
+.margin-nav {
   margin-top: -20px;
 }
 
+.asowesome-color {
+  color: #2E67AC;
+}
 
+.color-text {
+  color: #323a45 !important;
+}
+
+.space {
+  margin-top: 40px;
+}
+
+.background-color {
+  background-color: #f9f9fa;
+}
+
+.new-color{
+  background-color: #ff5a5f !important;
+  border-color: #ff5a5f !important;
+}
+.new-color:hover{
+  background-color: #ffffff !important;
+  border-color: #ff5a5f !important;
+  color: #ff5a5f !important;
+
+  transition: background-color 0.3s ease-in,border-color 0.3s ease-in,color 0.3s ease-in ;
+
+}
 
 
 
