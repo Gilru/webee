@@ -1,5 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Lato:100);
 @import url(http://fonts.googleapis.com/css?family=Roboto:100);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400);
 
 $navbar-default-brand-color: #ff5a5f;
 .color-title {
@@ -17,6 +18,9 @@ $navbar-default-brand-color: #ff5a5f;
 .lato {
   font-family: 'Lato', sans-serif;
 }
+.open-sans{
+  font-family: 'Open Sans', sans-serif;
+}
 
 //======================================Sass=========================================================
 .thin {
@@ -25,6 +29,10 @@ $navbar-default-brand-color: #ff5a5f;
 
 .light {
   font-weight: 300 !important;
+}
+
+.regular{
+  font-weight: 400 !important;
 }
 
 .navbar .navbar-brand {
@@ -77,9 +85,11 @@ label {
 }
 
 .color-text {
-//  super color
+  //  super color
   color: #444 !important;
 }
+
+
 
 .space {
   margin-top: 40px;
@@ -89,36 +99,63 @@ label {
   background-color: #f9f9fa;
 }
 
-.new-color{
+.new-color {
   background-color: #ff5a5f !important;
   border-color: #ff5a5f !important;
 }
-.new-color:hover{
+
+.new-color:hover {
   background-color: #ffffff !important;
   border-color: #ff5a5f !important;
   color: #ff5a5f !important;
 
-  transition: background-color 0.3s ease-in,border-color 0.3s ease-in,color 0.3s ease-in ;
+  transition: background-color 0.3s ease-in, border-color 0.3s ease-in, color 0.3s ease-in;
 
 }
 
-.margin-readme{
+.margin-readme {
   margin: 60px 0 80px 0 !important;
 }
-.border-bottom{
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1) ;
+
+.border-bottom {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.margin-job{
+.margin-job {
   margin: 75px 0 75px 0;
 }
 
-.margin-date{
+.margin-date {
   margin-top: 20px !important;
 }
 
-.color-date-link{
+.color-date-link {
   color: rgba(0, 0, 0, 0.3) !important;
 }
 
+.border-link {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3) !important;
+  text-decoration: none !important;
+}
+
+.boder-purple{
+  border-top-color: rgb(128, 127, 255) !important;
+  border-top-width: 3px !important;
+}
+
+.boder-blue{
+  border-top-color: rgb(118, 188, 255) !important;
+  border-top-width: 3px !important;
+}
+.hover-blue:hover{
+  background-color: rgb(118, 188, 255) ;
+  color: #ffffff;
+  transition: background-color 0.3s ease-in, color 0.3s ease-in;
+}
+
+.hover-purple:hover{
+  background-color: rgb(128, 127, 255) ;
+  color: #ffffff;
+  transition: background-color 0.3s ease-in, color 0.3s ease-in;
+}
 @import "bootstrap";
