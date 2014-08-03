@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Lato:100);
+@import url(http://fonts.googleapis.com/css?family=Lato:100,300);
 @import url(http://fonts.googleapis.com/css?family=Roboto:100);
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400);
 
@@ -25,6 +25,9 @@ $navbar-default-brand-color: #ff5a5f;
 //======================================Sass=========================================================
 .thin {
   font-weight: 100 !important;
+}
+.thin-light{
+  font-weight: 200;
 }
 
 .light {
@@ -77,7 +80,7 @@ label {
 }
 
 .margin-nav {
-  margin-top: -20px;
+  margin-top: -40px;
 }
 
 .asowesome-color {
@@ -96,7 +99,7 @@ label {
 }
 
 .background-color {
-  background-color: #f9f9fa;
+  background-color: #fafafa;
 }
 
 .new-color {
@@ -114,7 +117,11 @@ label {
 }
 
 .margin-readme {
-  margin: 60px 0 80px 0 !important;
+  margin: 80px 0 50px 0 !important;
+}
+
+.margin-readme-bottom{
+  margin-bottom: 80px !important;
 }
 
 .border-bottom {
