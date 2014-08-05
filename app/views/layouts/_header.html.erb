@@ -33,7 +33,12 @@
 
 
         <ul class="nav navbar-nav navbar-right">
-          <li><%= link_to "Login",'#',class: "btn btn-primary light" %></li>
+          <% if user_signed_in? %>
+             <li><%= link_to "Logout",destroy_user_session_path,method: :delete,class: "btn btn-primary light" %></li>
+          <% else %>
+          <li><%= link_to "Login",new_user_session_path,class: "btn btn-primary light" %></li>
+              <% end %>
+
         </ul>
       </div>
       <!-- /.navbar-collapse -->
