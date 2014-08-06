@@ -19,13 +19,14 @@
   display: block;
   box-sizing: border-box;
   font-size: em(20);
+  font-weight: 100;
   line-height: em(20);
   padding: em(5) 0;
   height: em(30);
   width: 100%;
   border: 0;
   outline: none;
-  border-bottom: em(2) solid #bbb;
+  border-bottom: em(1) solid #bbb;
 
   &:valid {
     position: relative;
@@ -37,3 +38,7 @@
     border-bottom-color: #ff5a5f;
   }
 }
+
+//===================================================END FORM =================================================
+
+
