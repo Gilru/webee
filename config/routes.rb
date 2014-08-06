@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
 #   =======================ERRORS=======================
   %w( 404 422 500 ).each do |code|
-    get code, :to => "errors#show", :code => code
+    get code, :to => "pages#show", :code => code
   end
 
 #   =======================ERRORS END ==================
