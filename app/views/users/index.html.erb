@@ -1,0 +1,29 @@
+<h1>All Users</h1>
+<table class="table table-striped table-hover">
+  <thead>
+  <tr>
+    <th>User ID</th>
+    <th>name</th>
+    <th>company-name</th>
+    <th>email</th>
+    <th>date last sign in</th>
+    <th>number of signin</th>
+
+
+  </tr>
+  </thead>
+
+
+  <tbody>
+  <% @users.each do |user| %>
+  <tr>
+        <td><%= user.id%></td>
+        <td><%= user.name %></td>
+        <td><%= user.company %></td>
+        <td><%= user.email %></td>
+        <td><%= user.last_sign_in_at %></td>
+        <td><%= user.sign_in_count %></td>
+  </tr>
+  <% end %>
+  </tbody>
+</table>
