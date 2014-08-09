@@ -1,3 +1,32 @@
-// Place all the styles related to the Blogs controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import url(http://fonts.googleapis.com/css?family=Nunito:300);
+.nunito{
+
+  font-family: 'Nunito', sans-serif;
+}
+
+//==================================
+.img-padding{
+
+  padding-top: 60px;
+}
+
+.font-size-title{
+  font-size: 60px;
+  margin-bottom: 3px;
+
+}
+
+.font-size-subtitle{
+
+  font-size: 50px;
+  margin-top: 0px;
+}
+
+.font-size-date{
+  font-size: 20px;
+  margin-bottom: 25px;
+}
+
+.font-size-p{
+  font-size: 20px;
+}
