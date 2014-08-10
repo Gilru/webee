@@ -42,7 +42,7 @@
         <td><%= blog.title %></td>
         <td><%= blog.sub_title %></td>
         <td><%=truncate(blog.content, lenght: 6) %></td>
-        <td><%= image_tag blog.image.url(:thumb) %> </td>
+        <td><%= image_tag blog.image.url(:thumb)%> </td>
         <td><%= blog.user.name if blog.user %></td>
         <td><%= link_to 'Show', blog %></td>
         <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
