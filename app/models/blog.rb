@@ -1,9 +1,12 @@
 class Blog < ActiveRecord::Base
 
   belongs_to :user
+  has_attached_file :image, styles: { medium: "649x476>", thumb: "100x100>" }
+else
   has_attached_file :image, styles: { medium: "649x476>", thumb: "100x100>" },
                     storage: :dropbox,
-                    dropbox_credentials: Rails.root.join("config/dropbox.yml")
+                    dropbox_credentials: Rails.root.join("config/dropbox.yml"),
+                    path: ":style/:id_:filename"
 
 
   validates_attachment :image, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"] }
