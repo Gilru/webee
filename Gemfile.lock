@@ -52,8 +52,13 @@ GEM
       railties (>= 3.2.6, < 5)
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
+    dropbox-sdk (1.6.4)
+      json
     erubis (2.7.0)
     execjs (2.2.1)
+    figaro (0.7.0)
+      bundler (~> 1.0)
+      rails (>= 3, < 5)
     font-awesome-sass (4.1.0)
       sass (~> 3.2)
     hike (1.2.3)
@@ -77,6 +82,9 @@ GEM
       activesupport (>= 3.0.0)
       cocaine (~> 0.5.3)
       mime-types
+    paperclip-dropbox (1.2.2)
+      dropbox-sdk (~> 1.3)
+      paperclip (>= 3.1, < 5)
     pg (0.17.1)
     polyglot (0.3.5)
     rack (1.5.2)
@@ -149,10 +157,12 @@ DEPENDENCIES
   bourbon
   coffee-rails (~> 4.0.0)
   devise
+  figaro
   font-awesome-sass
   jbuilder (~> 2.0)
   jquery-rails
   paperclip (~> 4.2.0)
+  paperclip-dropbox (>= 1.1.7)
   pg
   rails (= 4.1.1)
   rails_12factor
