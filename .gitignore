@@ -16,12 +16,16 @@
 /tmp
 
 # Ignore other unneeded files.
-
+database.yml
+doc/
+*.swp
+*~
+.project
 .DS_Store
 .idea
+.secret
 
 
 
-
-#ignore file uploaded on localhost
+#ignore file upload on localhost
 /public/system
