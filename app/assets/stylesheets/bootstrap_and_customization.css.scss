@@ -129,10 +129,11 @@ label {
 
 .margin-readme {
   margin: 80px 0 50px 0 !important;
+
 }
 
-.margin-readme-bottom{
-  margin-bottom: 80px !important;
+.margin-readme-button{
+  margin: 80px 0 80px 0 !important;
 }
 
 .border-bottom {
@@ -189,4 +190,28 @@ label {
 
 
 //=====================================FLASHEND===========================
+
+.cloud{
+  font-size: 85px;
+  color: #5cb8e6;
+}
+
+.tablet{
+  font-size: 85px;
+  color: #809ae5;
+}
+
+.dollar{
+  font-size: 85px;
+  color: #68C3A3;
+}
+
+.color-title-growth{
+  color: #2e3b4e;
+}
+
+.growth-p{
+
+  color: #5f6a7d;
+}
 @import "bootstrap";
