@@ -5,13 +5,13 @@
     <% @blogs.each do |blog| %>
         <%= image_tag blog.image.url(:medium), class: "img-padding img-responsive"%>
 
-    <h1 class="font-size-title thin center color-text"><%= blog.title %></h1>
+    <h1 class="font-size-title thin center color-title-growth"><%= blog.title %></h1>
 
-    <h2 class="font-size-subtitle thin lato center color-text"><%= blog.sub_title %></h2>
+    <h2 class="font-size-subtitle thin lato center color-title-growth"><%= blog.sub_title %></h2>
 
-    <h3 class="font-size-date center nunito light">date by(<%= blog.user.name if blog.user %>) and number of comment</h3>
+    <h3 class="font-size-date center growth-p light">date by(<%= blog.user.name if blog.user %>) and number of comment</h3>
 
-    <p class="font-size-p nunito light"><%= blog.content %></p>
+    <p class="font-size-p growth-p light"><%= blog.content %></p>
     <% end %>
   </div>
   <div class="col-md-3"></div>
