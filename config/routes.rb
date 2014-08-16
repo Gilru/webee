@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'info/why_us'
+
   resources :blogs
 
   get 'users/index'
