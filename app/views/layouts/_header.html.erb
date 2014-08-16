@@ -11,7 +11,7 @@
         <ul class="nav navbar-nav">
           <li class="dropdown">
             <a href="#" class="dropdown-toggle navbar-brand color-title" data-toggle="dropdown">
-               <i class="fa fa-bars"></i>
+              <i class="fa fa-bars"></i>
             </a>
             <ul class="dropdown-menu" role="menu">
               <li><li class="center style-x"><i class="fi-x pink"></i></li>
@@ -43,10 +43,10 @@
 
         <ul class="nav navbar-nav navbar-right">
           <% if user_signed_in? %>
-             <li><%= link_to "Sign out",destroy_user_session_path,method: :delete,class: "btn btn-primary light" %></li>
+              <li><%= link_to "Sign out",destroy_user_session_path,method: :delete,class: "btn btn-primary light" %></li>
           <% else %>
-          <li><%= link_to "Sign in",new_user_session_path,class: "btn btn-primary light" %></li>
-              <% end %>
+              <li><%= link_to "Sign in",new_user_session_path,class: "btn btn-primary light" %></li>
+          <% end %>
 
         </ul>
       </div>

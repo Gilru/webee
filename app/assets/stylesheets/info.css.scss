@@ -1,10 +1,16 @@
+@import url(http://fonts.googleapis.com/css?family=Lobster);
+
+.lobster{
+  font-family: 'Lobster', cursive;
+}
+
 .info-boby{
-  padding: 0;
+  padding: 10px;
 }
 
 .background-why-us{
   background:#809ae5;
-  height: 80px;
+
 
 
 }
@@ -34,5 +40,15 @@ font-size: 20px;
 .background-why-main{
   background:#809ae5;
   height: 600px;
+  margin-top: -20px;
 }
+
+.margin-top-info-main{
+  margin-top: 20px;
+}
+
+.size-main-info{
+  font-size: 70px;
+}
+
 
