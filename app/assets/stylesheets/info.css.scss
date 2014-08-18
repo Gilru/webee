@@ -51,4 +51,34 @@ font-size: 20px;
   font-size: 70px;
 }
 
+//.overlay:after{background-image:-webkit-linear-gradient(-135deg, #7ed3fb 0%, #8e75e6 100%)/opacity: 0.75;
+
+
+.pill-style-info{
+  color:#809ae5;
+  border-color: #809ae5;
+}
+.pill-style-info:hover{
+  background-color:#809ae5 ;
+  color: #ffffff;
+  border-color:#809ae5 ;
+}
+
+.pill-info-widht{
+  width: 361px;
+}
+.fill-info-position{
+  margin: auto;
+}
+.margin-center-pill{
+  margin: 80px 0 50px 120px;
+
+}
+
+.active-fill-info-bg{
+  background-color:#809ae5 !important;
+  color: #ffffff !important;
+  border-color:#809ae5 !important;
+}
+
 
