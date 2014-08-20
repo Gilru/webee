@@ -1,6 +1,7 @@
-<div class="background-why-us">
+
+<div class="<%= yield(:background) %>">
   <nav class="navbar navbar-default back-bord-remove" role="navigation">
-    <div class="container">
+    <div class="container back-bord-remove">
       <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -15,12 +16,12 @@
                 <i class="fa fa-bars white"></i>
               </a>
               <ul class="dropdown-menu background-white" role="menu">
-                <li class="center style-x"><i class="fi-x purple"></i></li>
+               <li class="center style-x"><i class="fi-x <%= yield(:icon_color) %>"></i></li>
                 <li><%= link_to "home", root_path, class: "hover-home" %></li>
                 <li class="divider"></li>
                 <li><a href="#">Portofolio</a></li>
                 <li class="divider"></li>
-                <li><a href="#">Pricing</a></li>
+                <li><%= link_to "Pricing",info_pricing_path,class: "hover-pricing" %></li>
                 <li class="divider"></li>
                 <li><%= link_to "why us", info_why_us_path, class: "hover-why-us" %>
                 <li class="divider"></li>

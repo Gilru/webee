@@ -54,11 +54,11 @@ font-size: 20px;
 //.overlay:after{background-image:-webkit-linear-gradient(-135deg, #7ed3fb 0%, #8e75e6 100%)/opacity: 0.75;
 
 
-.pill-style-info{
+.pill-style-whyus {
   color:#809ae5;
   border-color: #809ae5;
 }
-.pill-style-info:hover{
+.pill-style-whyus:hover{
   background-color:#809ae5 ;
   color: #ffffff;
   border-color:#809ae5 ;
@@ -79,6 +79,45 @@ font-size: 20px;
   background-color:#809ae5 !important;
   color: #ffffff !important;
   border-color:#809ae5 !important;
+}
+
+.background-pricing{
+  background: #3498db;
+}
+
+.background-pricing-main{
+  background: #3498db;
+  height: 600px;
+  margin-top: -20px;
+}
+
+.active-fill-pricing-bg{
+  background-color:#3498db !important;
+  color: #ffffff !important;
+  border-color:#3498db !important;
+}
+
+.pill-style-pricing{
+  color:#3498db;
+  border-color: #3498db;
+}
+.pill-style-pricing:hover{
+  background-color:#3498db ;
+  color: #ffffff;
+  border-color:#3498db ;
+}
+
+.sale-icon-pricing{
+  font-size: 280px;
+  color: #ffffff;
+}
+
+.margin-left-sale{
+  margin-left: 120px;
+}
+
+.blue-ic{
+ color: #3498db;
 }
 
 
