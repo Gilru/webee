@@ -7,4 +7,8 @@ class InfoController < ApplicationController
   def pricing
 
   end
+
+  def portofolio
+
+  end
 end
