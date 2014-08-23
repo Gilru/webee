@@ -2,12 +2,19 @@ source 'https://rubygems.org'
 
 
 
-gem 'rails', '4.1.1'
+gem 'rails', '~> 4.1.5'
 gem 'bootstrap-sass', '~> 3.2.0.1'
 gem 'sass-rails', '~> 4.0.3'
 gem 'foundation-icons-sass-rails', '~> 3.0.0'
 gem 'font-awesome-sass'
+gem "animate-rails"
+gem 'themify-icons-rails', '~> 1.0.1.0'
 gem 'uglifier', '>= 1.3.0'
+gem 'modernizr-rails'
+gem 'jquery-slimscroll-rails'
+gem 'jquery-easing-rails'
+gem 'jquery-placeholder-rails'
+gem 'imagesLoaded_rails'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'bourbon'
 gem 'paperclip', '~> 4.2.0'

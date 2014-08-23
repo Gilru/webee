@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :blogs
+  has_many :projects
 
   validates :name, presence: true,
             length: {maximum: 75}

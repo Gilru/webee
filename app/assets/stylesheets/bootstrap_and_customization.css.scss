@@ -199,6 +199,7 @@ label {
 .tablet{
   font-size: 85px;
   color: #809ae5;
+
 }
 
 .dollar{
@@ -217,4 +218,23 @@ label {
 .pink{
   color:#ff5a5f !important; ;
 }
+.size-get-st{
+  font-size: 18px !important;
+  padding: 18px 24px 18px 24px !important;
+}
+
+.size-readmore{
+  font-size: 17px !important;
+  padding: 17px 28px 17px 28px !important;
+}
+::-moz-selection { /* Code for Firefox */
+  color: #ffffff !important;
+  background: rgba(128,154,229,0.4) !important;
+}
+
+::selection {
+  color: #ffffff !important;
+  background: rgba(128,154,229,0.4) !important;
+}
+
 @import "bootstrap";

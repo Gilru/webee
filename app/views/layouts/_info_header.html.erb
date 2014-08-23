@@ -45,9 +45,9 @@
 
           <ul class="nav navbar-nav navbar-right">
             <% if user_signed_in? %>
-                <li><%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "btn btn-primary light #{yield(:signout)}" %></li>
+                <li><%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "btn btn-danger btn-primary btn-rounded light #{yield(:signout)}" %></li>
             <% else %>
-                <li><%= link_to "Sign in", new_user_session_path, class: "btn btn-primary light #{yield(:signin)}" %></li>
+                <li><%= link_to "Sign in", new_user_session_path, class: "btn btn-primary btn-outline btn-rounded light #{yield(:signin)}" %></li>
             <% end %>
 
           </ul>

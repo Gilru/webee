@@ -28,6 +28,8 @@
               <li><%= link_to "user info",users_index_path %></li>
               <li class="divider"></li>
               <li><%= link_to "edit user",edit_user_registration_path %></li>
+              <li class="divider"></li>
+              <li><%= link_to "project",projects_path %></li>
 
 
             </ul>
@@ -43,9 +45,9 @@
 
         <ul class="nav navbar-nav navbar-right">
           <% if user_signed_in? %>
-              <li><%= link_to "Sign out",destroy_user_session_path,method: :delete,class: "btn btn-primary light" %></li>
+              <li><%= link_to "Sign out",destroy_user_session_path,method: :delete,class: "btn btn-primary btn-outline btn-rounded light" %></li>
           <% else %>
-              <li><%= link_to "Sign in",new_user_session_path,class: "btn btn-primary light" %></li>
+              <li><%= link_to "Sign in",new_user_session_path,class: "btn btn-primary btn-outline btn-rounded light" %></li>
           <% end %>
 
         </ul>

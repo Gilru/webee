@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :projects
+
   get 'info/why_us'
   get 'info/pricing'
   get 'info/portofolio'
