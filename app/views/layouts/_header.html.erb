@@ -15,13 +15,13 @@
             </a>
             <ul class="dropdown-menu" role="menu">
               <li><li class="center style-x"><i class="fi-x pink"></i></li>
-              <li><%= link_to "home",root_path, class: "hover-home" %></li>
+              <li><%= link_to "home",root_path, class: "hover-home size-menu light" %></li>
               <li class="divider"></li>
-              <li><%= link_to "portofolio",info_portofolio_path,class: "hover-portofolio" %></li>
+              <li><%= link_to "portofolio",info_portofolio_path,class: "hover-portofolio size-menu light" %></li>
               <li class="divider"></li>
-              <li><%= link_to "Pricing",info_pricing_path,class: "hover-pricing" %></li>
+              <li><%= link_to "Pricing",info_pricing_path,class: "hover-pricing size-menu light" %></li>
               <li class="divider"></li>
-              <li><%= link_to "why us",info_why_us_path,class: "hover-why-us" %>
+              <li><%= link_to "why us",info_why_us_path,class: "hover-why-us size-menu light" %>
               <li class="divider"></li>
               <li><%= link_to "blog",blogs_path %></li>
               <li class="divider"></li>
@@ -47,7 +47,7 @@
           <% if user_signed_in? %>
               <li><%= link_to "Sign out",destroy_user_session_path,method: :delete,class: "btn btn-primary btn-outline btn-rounded light" %></li>
           <% else %>
-              <li><%= link_to "Sign in",new_user_session_path,class: "btn btn-primary btn-outline btn-rounded light" %></li>
+              <li><%= link_to "Sign in",new_user_session_path,class: "btn btn-primary btn-outline btn-rounded light col-sign" %></li>
           <% end %>
 
         </ul>
