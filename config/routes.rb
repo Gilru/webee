@@ -13,6 +13,9 @@ Rails.application.routes.draw do
   get 'users/show'
 
   devise_for :users
+  match 'user_root' => 'users#show', via: [:get]
+  match 'users/:id' => 'users#destroy', :via => :delete, as: :admin_destroy_user
+
   root "pages#home"
 
 #   =======================ERRORS=======================
