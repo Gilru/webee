@@ -14,7 +14,7 @@
             <th>email</th>
             <th>date last sign in</th>
             <th>number of signin</th>
-            <th colspan="1"></th>
+            <th colspan="2"></th>
 
 
           </tr>
@@ -32,8 +32,9 @@
                 <td><%= user.sign_in_count %></td>
                 <% provide(:user_name, "#{user.name if user == current_user}") %>
 
-
+                <td><%= link_to "Profile", profile_path %></td>
                 <td><%= link_to "Destroy", admin_destroy_user_path(user), method: :delete, data: { confirm: "You sure?" } %></td>
+
               </tr>
           <% end %>
           </tbody>

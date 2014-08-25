@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
   devise_for :users
   match 'user_root' => 'users#show', via: [:get]
+  match "profile" => "users#show", :as => 'profile', via: [:get]
   match 'users/:id' => 'users#destroy', :via => :delete, as: :admin_destroy_user
 
   root "pages#home"

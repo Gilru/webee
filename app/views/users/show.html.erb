@@ -4,7 +4,11 @@
       <div class="col-lg-12">
 
         <h1>Users#show</h1>
+        <% @users.each do |user| %>
+            <td><%= user.name if user == current_user %></td>
+            <% provide(:user_name, "#{user.name if user == current_user}") %>
 
+            <% end %>
 
         <p>Find me in app/views/users/show.html.erb</p>
 

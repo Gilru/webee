@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_filter :authenticate_user!
   layout "admin"
 
   def index
@@ -6,7 +7,7 @@ class UsersController < ApplicationController
   end
 
   def show
-
+    @users = User.all
   end
 
   def destroy
