@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140821232531) do
+ActiveRecord::Schema.define(version: 20140827204502) do
 
   create_table "blogs", force: true do |t|
     t.string   "title"
@@ -39,12 +39,12 @@ ActiveRecord::Schema.define(version: 20140821232531) do
   add_index "projects", ["user_id"], name: "index_projects_on_user_id"
 
   create_table "users", force: true do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
+    t.string   "email",                   default: "", null: false
+    t.string   "encrypted_password",      default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",           default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
@@ -53,6 +53,10 @@ ActiveRecord::Schema.define(version: 20140821232531) do
     t.datetime "updated_at"
     t.string   "name"
     t.string   "company"
+    t.string   "profileimg_file_name"
+    t.string   "profileimg_content_type"
+    t.integer  "profileimg_file_size"
+    t.datetime "profileimg_updated_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

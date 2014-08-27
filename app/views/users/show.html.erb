@@ -7,6 +7,7 @@
         <% @users.each do |user| %>
             <td><%= user.name if user == current_user %></td>
             <% provide(:user_name, "#{user.name if user == current_user}") %>
+            <% provide(:image_profile, "#{user.profileimg.url(:medium) if user == current_user}") %>
 
             <% end %>
 

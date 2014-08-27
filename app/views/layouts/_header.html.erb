@@ -45,7 +45,7 @@
 
         <ul class="nav navbar-nav navbar-right">
           <% if user_signed_in? %>
-              <li><%= link_to "Sign out",destroy_user_session_path,method: :delete,class: "btn btn-primary btn-outline btn-rounded light" %></li>
+              <li><%= link_to "Sign out",destroy_user_session_path,method: :delete,class: "btn btn-primary btn-outline btn-rounded light border-color-degr" %></li>
           <% else %>
               <li><%= link_to "Sign in",new_user_session_path,class: "btn btn-primary btn-outline btn-rounded light border-color-degr" %></li>
           <% end %>
