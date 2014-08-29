@@ -4,14 +4,19 @@
   <!-- Sidebar -->
   <div id="sidebar-wrapper">
     <ul class="sidebar-nav">
-      <li class="sidebar-brand">
+      <li class="sidebar-brand margin-name">
         <a href="#">
-          <p>
-            <ul class="inline-block-img">
-            <%= image_tag yield(:image_profile), class: "image-profile"  %>
-            <span class="name"><%= link_to "#{yield(:user_name)}",profile_path  %></span>
-            </ul>
-          </p>
+
+
+          <p><%= image_tag yield(:image_profile), class: "image-profile margin-profile img-circle border-profile"  %>
+
+
+              <%= link_to profile_path do%>
+              <span class="name"><%= yield(:user_name)%></span>
+              <% end%></p>
+
+
+
 
 
           <!--link_to "#{yield(:user_name)}",profile_path -->
