@@ -255,5 +255,5 @@ Devise.setup do |config|
   # config.omniauth_path_prefix = '/my_engine/users/auth'
 
   #set up sendgrid
-  config.mailer_sender = "mail-to-send@from.com"
+  config.mailer_sender = "webee@company.com"
 end
