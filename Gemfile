@@ -20,6 +20,7 @@ gem 'bourbon'
 gem 'paperclip', '~> 4.2.0'
 gem "paperclip-dropbox", ">= 1.1.7"
 gem "figaro"
+gem 'letter_opener', :group => :development
 gem 'devise'
 gem 'jquery-rails'
 gem 'turbolinks'
