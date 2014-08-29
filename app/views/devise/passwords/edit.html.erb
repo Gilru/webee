@@ -16,9 +16,9 @@
                 <%= f.password_field :password, autofocus: true, autocomplete: "off",class: "field__input", placeholder: "enter new password" %></div>
 
               <div class="field">
-                <%= f.password_field :password_confirmation, autocomplete: "off",class: "field__input", placeholder: "confirm new password" %></div>
+                <%= f.password_field :password_confirmation, autocomplete: "off",class: "field__input", placeholder: "confirm new password" %></div> </br>
 
-              <div><%= f.submit "Change my password" %></div>
+              <div><%= f.submit "Change my password", class: "btn btn-primary btn-fill new-color light sign-font-size" %></div> </br>
           <% end %>
 
           <%= render "devise/shared/links" %>
