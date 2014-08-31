@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140831012920) do
+ActiveRecord::Schema.define(version: 20140831203056) do
 
   create_table "blogs", force: true do |t|
     t.string   "title"
@@ -73,6 +73,7 @@ ActiveRecord::Schema.define(version: 20140831012920) do
     t.string   "webimg_content_type"
     t.integer  "webimg_file_size"
     t.datetime "webimg_updated_at"
+    t.integer  "user_id"
   end
 
 end

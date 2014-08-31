@@ -4,8 +4,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :blogs
-  has_many :projects
+  has_many :blogs, dependent: :destroy
+  has_many :projects, dependent: :destroy
 
   validates :name, presence: true,
             length: {maximum: 75}
@@ -29,6 +29,8 @@ else
 
 
   # ==============================profile end ====================================
+
+  has_many :websites, dependent: :destroy
 
 
 end

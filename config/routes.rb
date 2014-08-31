@@ -28,6 +28,8 @@ Rails.application.routes.draw do
 
 #   =======================ERRORS END ==================
 
+  get 'seller' => "websites#seller"
+
 
 
 end

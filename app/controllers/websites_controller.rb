@@ -1,11 +1,19 @@
 class WebsitesController < ApplicationController
   before_action :set_website, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!, only: [:seller,:new, :create, :edit, :update, :destroy]
+  before_filter :check_user, only: [:edit, :update, :destroy]
   layout "info"
 
+
+
+
+  def seller
+    @websites = Website.where(user: current_user).order("created_at DESC")
+  end
   # GET /websites
   # GET /websites.json
   def index
-    @websites = Website.all
+    @websites = Website.all.order("created_at DESC")
   end
 
   # GET /websites/1
@@ -26,6 +34,7 @@ class WebsitesController < ApplicationController
   # POST /websites.json
   def create
     @website = Website.new(website_params)
+    @website.user_id = current_user.id
 
     respond_to do |format|
       if @website.save
@@ -71,5 +80,11 @@ class WebsitesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def website_params
       params.require(:website).permit(:name, :url, :description, :price,:webimg)
+    end
+
+  def check_user
+    if current_user != @website.user
+      redirect_to root_url, alert: "Sorry, you can not access here only for administration"
+    end
     end
 end

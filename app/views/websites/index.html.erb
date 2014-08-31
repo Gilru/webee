@@ -11,12 +11,13 @@
       <div class="col-md-3 center">
         <div class="thumbnail">
           <%= image_tag website.webimg.url(:medium) %>
+          <!--link_to image_tag(listing.image.url), listing-->
           <div class="caption">
             <h3><%= website.name %></h3>
             <p><%=number_to_currency(website.price) %></p>
+            <p><%= "Sold by #{website.user.name}" %></p>
             <%= link_to 'Show', website, class: "btn btn-link" %>
-            <%= link_to 'Edit', edit_website_path(website), class: "btn btn-link" %>
-            <%= link_to 'Destroy', website, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-link" %>
+
           </div>
         </div>
       </div>
@@ -42,7 +43,8 @@
       <th>Url</th>
       <th>Description</th>
       <th>Price</th>
-      <th colspan="3"></th>
+      <th>Seller name</th>
+      <th colspan="1"></th>
     </tr>
   </thead>
 
@@ -53,9 +55,9 @@
         <td><%= website.url %></td>
         <td><%= website.description %></td>
         <td><%= website.price %></td>
+        <td><%= "Sold by #{website.user.name}" %></td>
         <td><%= link_to 'Show', website %></td>
-        <td><%= link_to 'Edit', edit_website_path(website) %></td>
-        <td><%= link_to 'Destroy', website, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
       </tr>
     <% end %>
   </tbody>
