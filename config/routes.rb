@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :websites
+
   resources :projects
 
   get 'info/why_us'

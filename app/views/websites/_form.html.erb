@@ -1,0 +1,39 @@
+<%= form_for @website, html: {multipart: true} do |f| %>
+  <% if @website.errors.any? %>
+    <div id="error_explanation" class="red">
+      <h2><%= pluralize(@website.errors.count, "error") %> prohibited this website from being saved:</h2>
+
+      <ul>
+      <% @website.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <div class="form-group">
+      <%= f.label :webimg %><br>
+      <%= f.file_field :webimg, autofocus: true, class: "form-control" %>
+    </div>
+
+  <div class="form-group">
+    <%= f.label :name %><br>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :url %><br>
+    <%= f.url_field :url, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :price %><br>
+    <%= f.number_field :price, class: "form-control" %>
+  </div>
+  <div>
+  <div class="form-group">
+      <%= f.label :description %><br>
+      <%= f.text_area :description, class: "form-control" %>
+  </div>
+
+    <%= f.submit class:"btn btn-default" %>
+  </div><br>
+<% end %>
