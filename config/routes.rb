@@ -33,6 +33,8 @@ Rails.application.routes.draw do
 #   =======================ERRORS END ==================
 
   get 'seller' => "websites#seller"
+  get 'sales' => "orders#sales"
+  get 'purchases' => "orders#purchases"
 
 
 

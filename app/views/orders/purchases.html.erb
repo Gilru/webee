@@ -1,0 +1,40 @@
+<div id="page-content-wrapper">
+  <div class="container-fluid">
+
+
+    <h1 class="thin center">Your Purchase History</h1>
+
+    <table class="table table-striped table-hover table-bordered">
+      <thead>
+      <tr>
+        <th>Image</th>
+        <th>Item</th>
+        <th>Price</th>
+        <th>Seller</th>
+        <th>Date Purchased</th>
+
+      </tr>
+      </thead>
+
+      <tbody>
+      <% @orders.each do |order| %>
+          <tr>
+            <td><%= image_tag order.website.webimg.url(:medium), class: "image-profile" %></td>
+            <td><%= order.website.name %></td>
+            <td><%= number_to_currency(order.website.price) %></td>
+            <td><%= order.seller.name %></td>
+            <td class="center"><%= order.created_at.strftime("%B %-d, %Y") %></td>
+
+
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+
+    <br>
+    <% if user_signed_in? %>
+        <%= link_to 'New Website', new_website_path %>
+    <% end %>
+
+  </div>
+</div>
