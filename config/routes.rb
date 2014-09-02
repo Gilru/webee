@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
-  resources :websites
+
+
+  resources :websites do
+    resources :orders
+  end
 
   resources :projects
 

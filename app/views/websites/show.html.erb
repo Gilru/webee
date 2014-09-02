@@ -18,6 +18,7 @@
 <p>
   <strong>Price:</strong>
   <%= @website.price %>
+  <%= link_to "Buy It Now", new_website_order_path(@website), class: "btn btn-primary" %>
 </p>
 
 <%= link_to 'Edit', edit_website_path(@website) %> |

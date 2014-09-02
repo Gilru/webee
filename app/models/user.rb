@@ -31,6 +31,9 @@ else
   # ==============================profile end ====================================
 
   has_many :websites, dependent: :destroy
-
+#==================================Purchase=======================================
+  has_many :sales, class_name: "Order", foreign_key: "seller_id"
+  has_many :purchases, class_name: "Order", foreign_key: "buyer_id"
+#=================================================================================
 
 end
