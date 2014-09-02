@@ -13,7 +13,13 @@
 
               <%= link_to profile_path do%>
               <span class="name"><%= yield(:user_name)%></span>
+
               <% end%></p>
+
+          <p>hello
+            <%= current_user.name %>
+            <%= image_tag current_user.profileimg.url(:medium),class: "image-profile margin-profile img-circle border-profile" %>
+          </p>
 
 
 

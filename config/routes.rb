@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
 
   resources :websites do
-    resources :orders
+    resources :orders, only: [:new, :create]
   end
 
   resources :projects
