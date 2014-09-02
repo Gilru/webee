@@ -1,3 +1,4 @@
+source 'https://code.stripe.com'
 source 'https://rubygems.org'
 
 
@@ -22,6 +23,7 @@ gem "paperclip-dropbox", ">= 1.1.7"
 gem "figaro"
 gem 'letter_opener', :group => :development
 gem 'devise'
+gem 'stripe'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
