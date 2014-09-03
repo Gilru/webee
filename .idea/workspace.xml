@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a75b35cf-b61d-46ab-96d3-97f367ce420e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/orders/_form.html.erb" afterPath="$PROJECT_DIR$/app/views/orders/_form.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/orders/new.html.erb" afterPath="$PROJECT_DIR$/app/views/orders/new.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/orders.js.coffee" afterPath="$PROJECT_DIR$/app/assets/javascripts/orders.js.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/orders_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/orders_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/website.rb" afterPath="$PROJECT_DIR$/app/models/website.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="webee.iws" />
@@ -73,12 +70,10 @@
         <option value="$PROJECT_DIR$/app/views/websites/seller.html.erb" />
         <option value="$PROJECT_DIR$/app/views/users/index.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/websites_controller.rb" />
-        <option value="$PROJECT_DIR$/app/models/website.rb" />
         <option value="$PROJECT_DIR$/app/models/order.rb" />
         <option value="$PROJECT_DIR$/app/models/user.rb" />
         <option value="$PROJECT_DIR$/app/views/websites/show.html.erb" />
         <option value="$PROJECT_DIR$/app/views/orders/sales.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/orders/purchases.html.erb" />
         <option value="$PROJECT_DIR$/app/views/layouts/_admin_header.html.erb" />
         <option value="$PROJECT_DIR$/app/views/layouts/_header.html.erb" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
@@ -92,6 +87,8 @@
         <option value="$PROJECT_DIR$/app/views/orders/_form.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/orders.js.coffee" />
         <option value="$PROJECT_DIR$/app/controllers/orders_controller.rb" />
+        <option value="$PROJECT_DIR$/app/models/website.rb" />
+        <option value="$PROJECT_DIR$/app/views/orders/purchases.html.erb" />
       </list>
     </option>
   </component>
@@ -521,21 +518,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/website.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43711656" vertical-offset="0" max-vertical-offset="652">
-          <caret line="19" column="18" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/user.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.82822084" vertical-offset="0" max-vertical-offset="675">
-          <caret line="36" column="82" selection-start-line="36" selection-start-column="82" selection-end-line="36" selection-end-column="82" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/order.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.20245399" vertical-offset="0" max-vertical-offset="652">
@@ -576,13 +558,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33601287" vertical-offset="0" max-vertical-offset="855">
           <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/orders/purchases.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.064412236" vertical-offset="40" max-vertical-offset="900">
-          <caret line="4" column="41" selection-start-line="4" selection-start-column="41" selection-end-line="4" selection-end-column="41" />
         </state>
       </provider>
     </entry>
@@ -699,6 +674,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6923077" vertical-offset="300" max-vertical-offset="1215">
           <caret line="50" column="76" selection-start-line="50" selection-start-column="76" selection-end-line="50" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/user.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7369231" vertical-offset="1" max-vertical-offset="675">
+          <caret line="32" column="41" selection-start-line="32" selection-start-column="41" selection-end-line="32" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/website.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.43846154" vertical-offset="0" max-vertical-offset="650">
+          <caret line="19" column="39" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/orders/purchases.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.46325877" vertical-offset="25" max-vertical-offset="675">
+          <caret line="21" column="63" selection-start-line="21" selection-start-column="63" selection-end-line="21" selection-end-column="63" />
           <folding />
         </state>
       </provider>
