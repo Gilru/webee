@@ -13,7 +13,12 @@ class WebsitesController < ApplicationController
   # GET /websites
   # GET /websites.json
   def index
-    @websites = Website.all.order("created_at DESC")
+    if params[:category].blank?
+      @websites = Website.all.order("created_at DESC")
+    else
+      @category_id = Category.find_by(name: params[:category]).id
+      @websites = Website.where(category_id: @category_id).order("created_at DESC")
+    end
   end
 
   # GET /websites/1
@@ -79,7 +84,7 @@ class WebsitesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def website_params
-      params.require(:website).permit(:name, :url, :description, :price,:webimg)
+      params.require(:website).permit(:name,:category_id, :url, :description, :price,:webimg)
     end
 
   def check_user
