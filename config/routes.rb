@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
 
 
+  resources :categories
+
   resources :websites do
     resources :orders, only: [:new, :create]
   end
