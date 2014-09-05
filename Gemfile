@@ -24,6 +24,8 @@ gem "figaro"
 gem 'letter_opener', :group => :development
 gem 'devise'
 gem 'stripe'
+gem 'will_paginate', '~> 3.0.7'
+gem 'will_paginate-bootstrap'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'

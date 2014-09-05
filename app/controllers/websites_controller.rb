@@ -14,10 +14,10 @@ class WebsitesController < ApplicationController
   # GET /websites.json
   def index
     if params[:category].blank?
-      @websites = Website.all.order("created_at DESC")
+      @websites = Website.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 4)
     else
       @category_id = Category.find_by(name: params[:category]).id
-      @websites = Website.where(category_id: @category_id).order("created_at DESC")
+      @websites = Website.where(category_id: @category_id).order("created_at DESC").paginate(:page => params[:page], :per_page => 4)
     end
   end
 
