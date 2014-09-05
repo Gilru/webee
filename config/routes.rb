@@ -8,7 +8,9 @@ Rails.application.routes.draw do
     resources :orders, only: [:new, :create]
   end
 
-  resources :projects
+  resources :projects do
+    resources :reviews
+  end
 
   get 'info/why_us'
   get 'info/pricing'

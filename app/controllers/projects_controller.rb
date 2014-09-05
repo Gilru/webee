@@ -14,6 +14,7 @@ class ProjectsController < ApplicationController
   # GET /projects/1
   # GET /projects/1.json
   def show
+    @reviews = Review.where(project_id: @project.id)
   end
 
   # GET /projects/new
@@ -75,6 +76,6 @@ class ProjectsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
-      params.require(:project).permit(:title, :description, :progress, :link)
+      params.require(:project).permit(:title,:user_id, :description, :progress, :link)
     end
 end

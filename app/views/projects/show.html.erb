@@ -20,5 +20,16 @@
   <%= @project.link %>
 </p>
 
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
+<% if @reviews.blank? %>
+    <h3>No reviews writed</h3>
+    <% else %>
+<%= link_to "Write Review",new_project_review_path(@project) %>
+<% @reviews.each do |review| %>
+    <td><%= review.comment %></td>
+    <% end %>
+
+    <% end %>
+<br/>
+
+<%= link_to 'Edit Project', edit_project_path(@project) %> |
+<%= link_to 'Back Project', projects_path %>

@@ -18,4 +18,5 @@
 //= require jquery-placeholder
 //= require imagesloaded
 //= require turbolinks
+//= require pin_it
 //= require_tree .

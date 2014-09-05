@@ -1,18 +1,25 @@
-
 <div class="row">
   <div class="col-md-3"></div>
   <div class="col-md-6">
     <% @blogs.each do |blog| %>
-        <%= image_tag blog.image.url(:medium), class: "img-padding img-responsive"%>
+        <div class="img-padding">
+        <%= pin_it_button media: image_url(blog.image.url),
+                          description: blog.content,
+                          url: blog %>
+         </div>
 
-    <h1 class="font-size-title thin center color-title-growth"><%= blog.title %></h1>
+        <%= image_tag blog.image.url(:medium), class: "img-responsive" %>
 
-    <h2 class="font-size-subtitle thin lato center color-title-growth"><%= blog.sub_title %></h2>
+        <h1 class="font-size-title thin center color-title-growth"><%= blog.title %></h1>
 
-    <h3 class="font-size-date center growth-p light">date by(<%= blog.user.name if blog.user %>) and number of comment</h3>
+        <h2 class="font-size-subtitle thin lato center color-title-growth"><%= blog.sub_title %></h2>
 
-    <p class="font-size-p growth-p light"><%= blog.content %></p>
-        <h1>hello</h1>
+        <h3 class="font-size-date center growth-p light">date by(<%= blog.user.name if blog.user %>) and number of
+          comment</h3>
+
+        <p class="font-size-p growth-p light"><%= blog.content %></p>
+
+
     <% end %>
   </div>
   <div class="col-md-3"></div>
@@ -20,7 +27,14 @@
 
 <br/>
 
-<%= will_paginate @listings, renderer: BootstrapPagination::Rails %>
+
+<div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-6">
+    <%= will_paginate @listings, renderer: BootstrapPagination::Rails,class:"margin-page-navi" %>
+    <div class="col-md-3"></div>
+  </div>
+</div>
 
 
 

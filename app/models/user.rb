@@ -36,4 +36,7 @@ else
   has_many :purchases, class_name: "Order", foreign_key: "buyer_id"
 #=================================================================================
 
+  # ===============================Review=========================================
+  has_many :reviews, dependent:  :destroy
+
 end
