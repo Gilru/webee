@@ -1,0 +1,21 @@
+<div class="row">
+  <% @websites.each do |website| %>
+      <div class="col-md-3 center">
+        <div class="thumbnail">
+          <%= image_tag website.webimg.url(:medium) %>
+          <!--link_to image_tag(listing.image.url), listing-->
+          <div class="caption">
+            <h3><%= website.name %></h3>
+            <p><%=number_to_currency(website.price) %></p>
+            <p><%= "Sold by #{website.user.name}" %></p>
+            <%= link_to 'Show', website, class: "btn btn-link" %>
+
+          </div>
+        </div>
+      </div>
+  <% end %>
+</div>
+<br/>
+<%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
+
+<br>

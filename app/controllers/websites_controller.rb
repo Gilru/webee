@@ -2,9 +2,18 @@ class WebsitesController < ApplicationController
   before_action :set_website, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_user!, only: [:seller,:new, :create, :edit, :update, :destroy]
   before_filter :check_user, only: [:edit, :update, :destroy]
+  before_action :check_admin, only: [:new,:edit,:create,:update,:destroy]
   layout "info"
 
 
+
+  def search
+    if params[:search].present?
+       @websites = Website.search(params[:search]).paginate(:page => params[:page], :per_page => 4)
+    else
+       @websites = Website.all.paginate(:page => params[:page], :per_page => 4)
+    end
+  end
 
 
   def seller
@@ -91,5 +100,11 @@ class WebsitesController < ApplicationController
     if current_user != @website.user
       redirect_to root_url, alert: "Sorry, you can not access here only for administration"
     end
+  end
+
+  def check_admin
+    unless current_user.admin?
+      redirect_to root_url, alert: "sorry,this action is authorized for you, only admin"
     end
+  end
 end

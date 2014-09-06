@@ -2,6 +2,7 @@ class ReviewsController < ApplicationController
   before_action :set_review, only: [:show, :edit, :update, :destroy]
   before_action :set_project
   before_action :authenticate_user!
+  before_action :check_user, only:  [:edit,:update,:destroy]
 
   # GET /reviews
   # GET /reviews.json
@@ -60,7 +61,7 @@ class ReviewsController < ApplicationController
   def destroy
     @review.destroy
     respond_to do |format|
-      format.html { redirect_to reviews_url, notice: 'Review was successfully destroyed.' }
+      format.html { redirect_to project_path(@project), notice: 'Review was successfully deleted.' }
       format.json { head :no_content }
     end
   end
@@ -73,6 +74,12 @@ class ReviewsController < ApplicationController
 
     def set_project
        @project = Project.find(params[:project_id])
+    end
+
+    def check_user
+       unless (@review.user == current_user) || (current_user.admin?)
+         redirect_to root_url, alert: "Sorry, you are not authorized to access this section"
+       end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

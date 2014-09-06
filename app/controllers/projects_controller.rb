@@ -14,7 +14,7 @@ class ProjectsController < ApplicationController
   # GET /projects/1
   # GET /projects/1.json
   def show
-    @reviews = Review.where(project_id: @project.id)
+    @reviews = Review.where(project_id: @project.id).order("created_at DESC")
   end
 
   # GET /projects/new

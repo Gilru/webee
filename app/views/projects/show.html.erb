@@ -22,14 +22,51 @@
 
 <% if @reviews.blank? %>
     <h3>No reviews writed</h3>
-    <% else %>
-<%= link_to "Write Review",new_project_review_path(@project) %>
-<% @reviews.each do |review| %>
-    <td><%= review.comment %></td>
-    <% end %>
+<% else %>
+    <%= link_to "Write Review", new_project_review_path(@project) %>
 
-    <% end %>
+    <table class="table">
+
+      <thead>
+        <tr>
+           <th class="col-md-3"></th>
+           <th class="col-md-9"></th>
+
+
+        </tr>
+      </thead>
+
+
+      <tbody>
+      <% @reviews.each do |review| %>
+          <tr>
+            <td>
+              <p>
+              <%=image_tag review.user.profileimg.url(:medium),class: "image-profile margin-profile img-circle border-profile" %>
+              <%="#{review.user.name.capitalize}" %>
+              <p><time><%= review.created_at.strftime("%-m/%-d/%y") %></time></p>
+              </p>
+            </td>
+
+            <td>
+              <p><%= h(review.comment).gsub(/\n/,'<br/>').html_safe %></p>
+            </td>
+          </tr>
+          <% if user_signed_in? %>
+          <% if (review.user == current_user) || (current_user.admin?) %>
+          <%= link_to "Edit Review" ,edit_project_review_path(@project,review)%>
+          <%= link_to "Delete" , project_review_path(@project,review),method: :delete,
+                                                                      data: { confirm: "Are you sure you want delete this review (#{review.comment})" }%>
+         <%end %>
+      <% end %>
+      <% end %>
+      </tbody>
+    </table>
+
+<% end %>
 <br/>
+
+
 
 <%= link_to 'Edit Project', edit_project_path(@project) %> |
 <%= link_to 'Back Project', projects_path %>
