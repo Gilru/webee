@@ -9,7 +9,7 @@ class WebsitesController < ApplicationController
 
   def search
     if params[:search].present?
-       @websites = Website.search(params[:search]).paginate(:page => params[:page], :per_page => 4)
+       @websites = Website.search(params[:search])
     else
        @websites = Website.all.paginate(:page => params[:page], :per_page => 4)
     end
