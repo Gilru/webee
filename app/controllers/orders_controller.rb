@@ -4,6 +4,13 @@ class OrdersController < ApplicationController
   layout "admin"
 
 
+  def search
+    if params[:search].present?
+      @orders = Order.search(params[:search])
+    else
+      @orders = Order.all.order("created_at DESC")
+    end
+  end
 
   def sales
     @orders = Order.all.where(seller: current_user).order("created_at DESC")

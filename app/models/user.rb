@@ -38,5 +38,5 @@ else
 
   # ===============================Review=========================================
   has_many :reviews, dependent:  :destroy
-
+  searchkick
 end

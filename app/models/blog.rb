@@ -17,5 +17,7 @@ else
   validates :content,:sub_title,:title, presence: true
   validates :title,:sub_title, length: {in: 3..30}
 
+  searchkick
+
 
 end

@@ -2,6 +2,16 @@ class UsersController < ApplicationController
   before_filter :authenticate_user!
   layout "admin"
 
+  def search
+    if params[:search].present?
+      @users = User.search(params[:search])
+    else
+      @users = User.all.order("created_at DESC")
+    end
+  end
+
+
+
   def index
     @users = User.all.order("created_at DESC")
   end

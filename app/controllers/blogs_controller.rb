@@ -2,6 +2,18 @@ class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
 
+
+
+
+  def search
+    if params[:search].present?
+      @blogs = Blog.search(params[:search])
+    else
+      @blogs = Blog.all.order("created_at DESC")
+    end
+  end
+
+
   # GET /blogs
   # GET /blogs.json
   def index
