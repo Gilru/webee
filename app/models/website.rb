@@ -20,5 +20,5 @@ else
   belongs_to :category
   has_many :orders, dependent: :destroy
 
-  searchkick
+  searchkick autocomplete: ['display_name']
 end
