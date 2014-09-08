@@ -5,7 +5,7 @@
 
 
         <!--form search beginning-->
-        <%= form_tag search_users_path, method: :get do %>
+        <%= form_tag search_path, method: :get do %>
             <p>
               <%= text_field_tag :search, params[:search],class: "form-control" %>
               <%= submit_tag "Search", name: nil,class: "btn btn-default" %>

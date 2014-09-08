@@ -38,12 +38,14 @@ Rails.application.routes.draw do
   end
 
 
-  resources :users do
-    collection do
-      get 'search'
-    end
-  end
 
+  get 'users/index'
+
+  get 'search' => "users#search"
+
+
+
+  get 'users/show'
 
   devise_for :users
 
