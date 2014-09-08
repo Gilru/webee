@@ -6,8 +6,11 @@ class UserNotifier < ActionMailer::Base
 
     mail( :to => @user.email,
           :subject => 'Thanks for your purchase!' )
-    mail( :to => "mont-phil@hotmail.fr",
-          :subject => 'new purchase!' )
 
+  end
+
+  def send_purchase_to_admin
+    mail( :to => "mont-phil@hotmail.fr",
+          :subject => 'A new purchase!' )
   end
 end
