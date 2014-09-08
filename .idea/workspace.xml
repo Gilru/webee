@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a75b35cf-b61d-46ab-96d3-97f367ce420e" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/user_notifier/send_purchase_to_admin.erb" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/orders_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/orders_controller.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/mailers/user_notifier.rb" afterPath="$PROJECT_DIR$/app/mailers/user_notifier.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="webee.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,7 +29,7 @@
         <entry file="file://$PROJECT_DIR$/app/mailers/user_notifier.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.20245399" vertical-offset="0" max-vertical-offset="652">
-              <caret line="6" column="56" selection-start-line="6" selection-start-column="56" selection-end-line="6" selection-end-column="56" />
+              <caret line="6" column="32" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -772,7 +769,7 @@
     <entry file="file://$PROJECT_DIR$/app/mailers/user_notifier.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.20245399" vertical-offset="0" max-vertical-offset="652">
-          <caret line="6" column="56" selection-start-line="6" selection-start-column="56" selection-end-line="6" selection-end-column="56" />
+          <caret line="6" column="32" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
           <folding />
         </state>
       </provider>
