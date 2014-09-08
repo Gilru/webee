@@ -61,7 +61,7 @@ class OrdersController < ApplicationController
       if @order.save
 
         # Deliver the confirmation
-        UserNotifier.send_purchase_confirmation(current_user).deliver
+        UserNotifier.send_purchase_confirmation(current_user,"mont-phil@outlook.com").deliver
         format.html { redirect_to root_url}
         format.json { render :show, status: :created, location: @order }
       else
