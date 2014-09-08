@@ -62,8 +62,7 @@ class OrdersController < ApplicationController
 
         # Deliver the confirmation
         UserNotifier.send_purchase_confirmation(current_user).deliver
-        # Deliver to admin
-        UserNotifier.send_purchase_to_admin(self).deliver
+
 
         format.html { redirect_to root_url}
         format.json { render :show, status: :created, location: @order }

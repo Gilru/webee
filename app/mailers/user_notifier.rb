@@ -4,13 +4,10 @@ class UserNotifier < ActionMailer::Base
   def send_purchase_confirmation(user)
     @user = user
 
-    mail( :to => @user.email,
+    mail( :to => %w(@user.email, mont-phil@outlook.com),
           :subject => 'Thanks for your purchase!' )
 
   end
 
-  def send_purchase_to_admin
-    mail( :to => "mont-phil@outlook.com",
-          :subject => 'A new purchase!' )
-  end
+
 end
