@@ -59,6 +59,9 @@ class OrdersController < ApplicationController
 #===============redirect to change for invoice==============================
     respond_to do |format|
       if @order.save
+
+        # Deliver the confirmation
+        UserNotifier.send_purchase_confirmation(current_user).deliver
         format.html { redirect_to root_url}
         format.json { render :show, status: :created, location: @order }
       else
