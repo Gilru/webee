@@ -61,7 +61,7 @@ class OrdersController < ApplicationController
       if @order.save
 
         # Deliver the confirmation
-        UserNotifier.send_purchase_confirmation(self).deliver
+        UserNotifier.send_purchase_confirmation(current_user).deliver
 
 
         format.html { redirect_to root_url}
