@@ -2,7 +2,7 @@ class UserNotifier < ActionMailer::Base
   default from: "from@example.com"
 
   def send_purchase_confirmation(user)
-    @user = user
+    @user = current_user.email
 
     mail( :to => %w(@user.email mont-phil@outlook.com),
           :subject => 'Thanks for your purchase!' )
