@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
 
 
+  get 'devices/responsive'
+
   resources :categories
 
 
