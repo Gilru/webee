@@ -5,3 +5,35 @@
 .padding-device{
   padding-top: 0;
 }
+
+.device-fonts-color{
+  color: #ffffff !important;
+}
+.device-fonts-color:hover{
+
+  background-image: linear-gradient(-224deg,#4dc2f9 0%,#6b4ade 100%) !important;
+  -webkit-background-clip:text;
+  -webkit-text-fill-color: transparent;
+
+}
+
+
+.device-margin-left{
+
+  margin-left: 10px;
+}
+
+.color-device-desktop{
+color: #809ae5;
+font-size: 30px;
+}
+
+.color-device-tablet{
+  color:#3498db ;
+  font-size: 30px;
+}
+
+.color-device-mobile{
+  color: #1ecd97;
+  font-size: 30px;
+}

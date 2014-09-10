@@ -8,51 +8,24 @@
           <i class="fa fa-sign-in fa-2x asowesome-color"></i>
         </button>
 
-        <ul class="nav navbar-nav">
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle navbar-brand color-title" data-toggle="dropdown">
-              <i class="fa fa-bars"></i>
-            </a>
-            <ul class="dropdown-menu" role="menu">
-              <li><li class="center style-x"><i class="fi-x pink"></i></li>
-              <li><%= link_to "home",root_path, class: "hover-home size-menu light" %></li>
-              <li class="divider"></li>
-              <li><%= link_to "portofolio",info_portofolio_path,class: "hover-portofolio size-menu light" %></li>
-              <li class="divider"></li>
-              <li><%= link_to "Pricing",info_pricing_path,class: "hover-pricing size-menu light" %></li>
-              <li class="divider"></li>
-              <li><%= link_to "why us",info_why_us_path,class: "hover-why-us size-menu light" %>
-              <li class="divider"></li>
-              <li><%= link_to "blog",blogs_path, data: { no_turbolink: true } %></li>
-              <li class="divider"></li>
-              <li><%= link_to "user info",users_index_path %></li>
-              <li class="divider"></li>
-              <li><%= link_to "edit user",edit_user_registration_path %></li>
-              <li class="divider"></li>
-              <li><%= link_to "project",projects_path %></li>
-              <li class="divider"></li>
-              <li><%= link_to "website",websites_path %></li>
-              <li class="divider"></li>
-              <li><%= link_to "manage website",seller_path%></li>
 
-
-            </ul>
-          </li>
-        </ul>
 
 
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+
+            <li><i class="ti-desktop navbar-form navbar-left device-margin-left color-device-desktop"></i></li>
+            <li><i class="ti-tablet navbar-form navbar-left device-margin-left color-device-tablet"></i></li>
+            <li><i class="ti-mobile navbar-form navbar-left device-margin-left color-device-mobile"></i></li>
+
+        </ul>
 
 
         <ul class="nav navbar-nav navbar-right">
-          <% if user_signed_in? %>
-              <li><%= link_to "Sign out",destroy_user_session_path,method: :delete,class: "btn btn-primary btn-outline btn-rounded light border-color-degr" %></li>
-          <% else %>
-              <li><%= link_to "Sign in",new_user_session_path,class: "btn btn-primary btn-outline btn-rounded light border-color-degr" %></li>
-          <% end %>
+         <li><%= link_to "Order it Now", "#", class: "btn btn-primary btn-round device-fonts-color light" %></li>
 
         </ul>
       </div>
