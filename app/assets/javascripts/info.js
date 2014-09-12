@@ -8,7 +8,16 @@ $(document).on('ready page:load', function () {
 });
 
 
-
+function showonlyone(thechosenone) {
+    $('.newboxes').each(function(index) {
+        if ($(this).attr("id") == thechosenone) {
+            $(this).slideDown(200);
+        }
+        else {
+            $(this).slideUp(600);
+        }
+    });
+}
 
 
 

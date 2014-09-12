@@ -1,4 +1,6 @@
-function showonlyone(thechosenone) {
+
+
+function showonedevice(thechosenone) {
     $('.devices').each(function(index) {
         if ($(this).attr("id") == thechosenone) {
             $(this).show(200);
