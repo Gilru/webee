@@ -44,6 +44,10 @@ class ProjectsController < ApplicationController
 
     respond_to do |format|
       if @project.save
+
+        # Deliver the confirmation
+        UserNotifier.send_confirmation_project_email(@project.user).deliver
+
         format.html { redirect_to @project, notice: 'Project was successfully created.' }
         format.json { render :show, status: :created, location: @project }
       else
