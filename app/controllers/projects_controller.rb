@@ -1,6 +1,7 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
+  before_action :check_user_and_admin, except: [:index,:show]
 
   layout "admin"
 
@@ -85,8 +86,18 @@ class ProjectsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_project
       @project = Project.find(params[:id])
+      unless (current_user == @project.user) || (current_user.manager?)
+        redirect_to root_url, alert: "Sorry, you can not access here, it not belong to you"
+      end
 
     end
+
+  def check_user_and_admin
+    unless current_user.manager?
+      redirect_to root_url, alert: "Sorry only manager can do that"
+    end
+  end
+
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params

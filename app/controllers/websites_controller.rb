@@ -98,14 +98,15 @@ class WebsitesController < ApplicationController
     end
 
   def check_user
+    # unless (@website.user == current_user) || (current_user.manager?)
     if current_user != @website.user
-      redirect_to root_url, alert: "Sorry, you can not access here only for administration"
+      redirect_to root_url, alert: "Sorry, you can not access here it not belong to you"
     end
   end
 
   def check_admin
     unless current_user.admin?
-      redirect_to root_url, alert: "sorry,this action is authorized for you, only admin"
+      redirect_to root_url, alert: "sorry,only admin have access"
     end
   end
 end

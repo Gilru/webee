@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140906200140) do
+ActiveRecord::Schema.define(version: 20140914192208) do
 
   create_table "blogs", force: true do |t|
     t.string   "title"
@@ -83,6 +83,7 @@ ActiveRecord::Schema.define(version: 20140906200140) do
     t.integer  "profileimg_file_size"
     t.datetime "profileimg_updated_at"
     t.boolean  "admin",                   default: false
+    t.boolean  "manager",                 default: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

@@ -33,6 +33,10 @@ class ReviewsController < ApplicationController
 
     respond_to do |format|
       if @review.save
+
+        # Deliver the confirmation
+        UserNotifier.send_confirmation_review(@review.user,self).deliver
+
         format.html { redirect_to @project, notice: 'Review was successfully created.' }
         format.json { render :show, status: :created, location: @review }
       else
