@@ -1,6 +1,7 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:search,:index, :show]
+  before_action :check_user_and_manager, except: [:search, :index,:show]
 
 
 
@@ -79,6 +80,12 @@ class BlogsController < ApplicationController
     def set_blog
       @blog = Blog.find(params[:id])
     end
+
+  def check_user_and_manager
+    unless current_user.manager?
+      redirect_to root_url, alert: "Sorry only manager can have access"
+    end
+  end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def blog_params

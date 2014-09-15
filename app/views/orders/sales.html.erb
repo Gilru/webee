@@ -43,7 +43,7 @@
     </table>
 
     <br>
-    <% if user_signed_in? %>
+    <% if user_signed_in? && current_user.admin? %>
     <%= link_to 'New Website', new_website_path %>
     <% end %>
 

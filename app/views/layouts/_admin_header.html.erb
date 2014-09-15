@@ -32,9 +32,13 @@
       <li>
         <a href="#">Dashboard</a>
       </li>
+
+    <% if user_signed_in? && current_user.manager? %>
       <li>
         <%= link_to "Sales History",sales_path %>
       </li>
+    <% end %>
+
       <li>
         <%= link_to "Purchase History",purchases_path %>
       </li>

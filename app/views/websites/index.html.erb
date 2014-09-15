@@ -58,37 +58,39 @@
 
 
 <!--==============================object===================================================-->
-
-<h1>Listing websites</h1>
-
-<table class="table table-striped table-hover">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Url</th>
-      <th>Description</th>
-      <th>Price</th>
-      <th>Seller name</th>
-      <th colspan="1"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @websites.each do |website| %>
-      <tr>
-        <td><%= website.name %></td>
-        <td><%= website.url %></td>
-        <td><%= website.description %></td>
-        <td><%= website.price %></td>
-        <td><%= "Sold by #{website.user.name}" %></td>
-        <td><%= link_to 'Show', website %></td>
-
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
 <% if user_signed_in? && current_user.admin? %>
-    <%= link_to 'New Website', new_website_path %>
+
+    <h1>Listing websites</h1>
+
+    <table class="table table-striped table-hover">
+      <thead>
+      <tr>
+        <th>Name</th>
+        <th>Url</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Seller name</th>
+        <th colspan="1"></th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <% @websites.each do |website| %>
+          <tr>
+            <td><%= website.name %></td>
+            <td><%= website.url %></td>
+            <td><%= website.description %></td>
+            <td><%= website.price %></td>
+            <td><%= "Sold by #{website.user.name}" %></td>
+            <td><%= link_to 'Show', website %></td>
+
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+
+    <br>
+    <% if user_signed_in? && current_user.admin? %>
+        <%= link_to 'New Website', new_website_path %>
+    <% end %>
 <% end %>

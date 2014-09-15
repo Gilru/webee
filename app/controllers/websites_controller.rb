@@ -2,7 +2,7 @@ class WebsitesController < ApplicationController
   before_action :set_website, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_user!, only: [:seller,:new, :create, :edit, :update, :destroy]
   before_filter :check_user, only: [:edit, :update, :destroy]
-  before_action :check_admin, only: [:new,:edit,:create,:update,:destroy]
+  before_action :check_admin, except: [:search,:index,:show]
   layout "info", except:[:show]
   layout "device", only:[:show]
 

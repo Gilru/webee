@@ -43,36 +43,38 @@
 
 
 
+<% if user_signed_in? && current_user.manager? %>
 
-<table class="table table-striped table-hover">
-  <thead>
-  <tr>
-    <th>Title</th>
-    <th>Sub title</th>
-    <th>Content</th>
-    <th>image</th>
-    <th>user name</th>
-    <th colspan="3"></th>
-  </tr>
-  </thead>
-
-  <tbody>
-  <% @blogs.each do |blog| %>
+    <table class="table table-striped table-hover">
+      <thead>
       <tr>
-        <td><%= blog.title %></td>
-        <td><%= blog.sub_title %></td>
-        <td><%=truncate(blog.content, lenght: 6) %></td>
-        <td><%= image_tag blog.image.url(:thumb)%> </td>
-        <td><%= blog.user.name if blog.user %></td>
-        <td><%= link_to 'Show', blog %></td>
-        <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
-        <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Title</th>
+        <th>Sub title</th>
+        <th>Content</th>
+        <th>image</th>
+        <th>user name</th>
+        <th colspan="3"></th>
       </tr>
-  <% end %>
-  </tbody>
-</table>
+      </thead>
 
-<br>
+      <tbody>
+      <% @blogs.each do |blog| %>
+          <tr>
+            <td><%= blog.title %></td>
+            <td><%= blog.sub_title %></td>
+            <td><%= truncate(blog.content, lenght: 6) %></td>
+            <td><%= image_tag blog.image.url(:thumb) %> </td>
+            <td><%= blog.user.name if blog.user %></td>
+            <td><%= link_to 'Show', blog %></td>
+            <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
+            <td><%= link_to 'Destroy', blog, method: :delete, data: {confirm: 'Are you sure?'} %></td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
 
-<!--if user_signed_in? -->
-<%= link_to 'New Blog', new_blog_path %>
+    <br>
+
+    <!--if user_signed_in? -->
+    <%= link_to 'New Blog', new_blog_path %>
+<% end %>

@@ -3,69 +3,72 @@
     <div class="row">
       <div class="col-lg-12">
 
-
-        <!--form search beginning-->
-        <%= form_tag search_path, method: :get do %>
-            <p>
-              <%= text_field_tag :search, params[:search],class: "form-control" %>
-              <%= submit_tag "Search", name: nil,class: "btn btn-default" %>
-            </p>
-        <% end %>
-
-        <!--form search-->
+        <% if user_signed_in? && current_user.manager? %>
+            <!--form search beginning-->
+            <%= form_tag search_path, method: :get do %>
+                <p>
+                  <%= text_field_tag :search, params[:search], class: "form-control" %>
+                  <%= submit_tag "Search", name: nil, class: "btn btn-default" %>
+                </p>
+            <% end %>
 
 
-        <h1 class="thin">All Users</h1>
-        <table class="table table-striped table-hover table-bordered">
-          <thead>
-          <tr>
-            <th>profile-img</th>
-            <th>User ID</th>
-            <th>name</th>
-            <th>company-name</th>
-            <th>email</th>
-            <th>date last sign in</th>
-            <th>number of signin</th>
-            <th>action</th>
+            <!--form search-->
 
 
-          </tr>
-          </thead>
-
-
-          <tbody>
-          <% @users.each do |user| %>
+            <h1 class="thin">All Users</h1>
+            <table class="table table-striped table-hover table-bordered">
+              <thead>
               <tr>
-                <td><%= image_tag user.profileimg.url(:medium), class: "image-profile" %></td>
-                <td><%= user.id %></td>
-                <td><%= user.name %></td>
-                <td><%= user.company %></td>
-                <td><%= user.email %></td>
-                <td><%= user.last_sign_in_at %></td>
-                <td><%= user.sign_in_count %></td>
-                <% provide(:user_name, "#{user.name if user == current_user}") %>
-                <% provide(:image_profile, "#{user.profileimg.url(:medium) if user == current_user}") %>
+                <th>profile-img</th>
+                <th>User ID</th>
+                <th>name</th>
+                <th>company-name</th>
+                <th>email</th>
+                <th>date last sign in</th>
+                <th>number of signin</th>
+                <th>action</th>
 
 
-                <td>
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
-                      Action <span class="ti-arrow-circle-down"></span>
-                    </button>
-                    <ul class="dropdown-menu" role="menu">
-                      <li><%= link_to "Profile", profile_path %></li>
-
-                      <li class="divider"></li>
-                      <li><%= link_to "Destroy", admin_destroy_user_path(user), method: :delete, data: {confirm: "You sure?"} %></li>
-
-
-                    </ul>
-                  </div>
-                </td>
               </tr>
-          <% end %>
-          </tbody>
-        </table>
+              </thead>
+
+
+              <tbody>
+              <% @users.each do |user| %>
+                  <tr>
+                    <td><%= image_tag user.profileimg.url(:medium), class: "image-profile" %></td>
+                    <td><%= user.id %></td>
+                    <td><%= user.name %></td>
+                    <td><%= user.company %></td>
+                    <td><%= user.email %></td>
+                    <td><%= user.last_sign_in_at %></td>
+                    <td><%= user.sign_in_count %></td>
+                    <% provide(:user_name, "#{user.name if user == current_user}") %>
+                    <% provide(:image_profile, "#{user.profileimg.url(:medium) if user == current_user}") %>
+
+
+                    <td>
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
+                          Action <span class="ti-arrow-circle-down"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu">
+                          <li><%= link_to "Profile", profile_path %></li>
+                          <% if user_signed_in? && current_user.manager? && current_user.admin? %>
+                              <li class="divider"></li>
+                              <li><%= link_to "Destroy", admin_destroy_user_path(user), method: :delete, data: {confirm: "You sure?"} %></li>
+                          <% end %>
+
+                        </ul>
+                      </div>
+                    </td>
+                  </tr>
+              <% end %>
+              </tbody>
+            </table>
+            <!--
+        <% end %> end of security  -->
 
       </div>
     </div>

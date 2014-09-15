@@ -1,6 +1,7 @@
 class OrdersController < ApplicationController
   before_action :set_order, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
+  before_action :check_user_and_manager, only: [:search,:sales]
   layout "admin"
 
 
@@ -80,6 +81,13 @@ class OrdersController < ApplicationController
     def set_order
       @order = Order.find(params[:id])
     end
+
+
+  def check_user_and_manager
+    unless current_user.manager?
+      redirect_to root_url, alert: "Sorry only manager can have access"
+    end
+  end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params

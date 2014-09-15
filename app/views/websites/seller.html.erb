@@ -1,3 +1,5 @@
+<% if user_signed_in? && current_user.admin? %>
+
 <!--form search beginning-->
 <%= form_tag search_websites_path, method: :get do %>
     <p>
@@ -65,3 +67,5 @@
 <br>
 
 <%= link_to 'New Website', new_website_path %>
+
+<% end %>
