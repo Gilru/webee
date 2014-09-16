@@ -1,7 +1,7 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
-  before_action :check_user_and_admin, except: [:index,:show]
+  before_action :check_user_and_manager, except: [:index,:show]
 
   layout "admin"
 
@@ -92,7 +92,7 @@ class ProjectsController < ApplicationController
 
     end
 
-  def check_user_and_admin
+  def check_user_and_manager
     unless current_user.manager?
       redirect_to root_url, alert: "Sorry only manager can do that"
     end

@@ -2,6 +2,7 @@ class ReviewsController < ApplicationController
   before_action :set_review, only: [:show, :edit, :update, :destroy]
   before_action :set_project
   before_action :authenticate_user!
+  before_action :check_user_and_manager, only: [:edit,:update,:destroy]
   before_action :check_user, only:  [:edit,:update,:destroy]
 
   # GET /reviews
@@ -35,7 +36,7 @@ class ReviewsController < ApplicationController
       if @review.save
 
         # Deliver the confirmation
-        UserNotifier.send_confirmation_review(@review.user,self).deliver
+        UserNotifier.send_confirmation_review(@review.project.user,self).deliver
 
         format.html { redirect_to @project, notice: 'Review was successfully created.' }
         format.json { render :show, status: :created, location: @review }
@@ -85,6 +86,12 @@ class ReviewsController < ApplicationController
          redirect_to root_url, alert: "Sorry, you are not authorized to access this section"
        end
     end
+
+  def check_user_and_manager
+    unless current_user.manager?
+      redirect_to root_url, alert: "Sorry only manager can do that"
+    end
+  end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def review_params

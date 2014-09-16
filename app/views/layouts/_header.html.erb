@@ -14,33 +14,34 @@
               <i class="fa fa-bars"></i>
             </a>
             <ul class="dropdown-menu" role="menu">
-              <li><li class="center style-x"><i class="fi-x pink"></i></li>
-              <li><%= link_to "home",root_path, class: "hover-home size-menu light" %></li>
+              <li>
+              <li class="center style-x"><i class="fi-x pink"></i></li>
+              <li><%= link_to "home", root_path, class: "hover-home size-menu light" %></li>
               <li class="divider"></li>
-              <li><%= link_to "portofolio",info_portofolio_path,class: "hover-portofolio size-menu light" %></li>
+              <li><%= link_to "portofolio", info_portofolio_path, class: "hover-portofolio size-menu light" %></li>
               <li class="divider"></li>
-              <li><%= link_to "Pricing",info_pricing_path,class: "hover-pricing size-menu light" %></li>
+              <li><%= link_to "Pricing", info_pricing_path, class: "hover-pricing size-menu light" %></li>
               <li class="divider"></li>
-              <li><%= link_to "why us",info_why_us_path,class: "hover-why-us size-menu light" %>
+              <li><%= link_to "why us", info_why_us_path, class: "hover-why-us size-menu light" %>
               <li class="divider"></li>
-              <li><%= link_to "blog",blogs_path, data: { no_turbolink: true } %></li>
+              <li><%= link_to "blog", blogs_path, data: {no_turbolink: true} %></li>
 
-          <% if user_signed_in? && current_user.manager? %>
-              <li class="divider"></li>
-              <li><%= link_to "user info",users_index_path %></li>
-          <% end %>
-              
-              <li class="divider"></li>
-              <li><%= link_to "edit user",edit_user_registration_path %></li>
-              <li class="divider"></li>
-              <li><%= link_to "project",projects_path %></li>
-              <li class="divider"></li>
-              <li><%= link_to "website",websites_path %></li>
+              <% if user_signed_in? && current_user.manager? %>
+                  <li class="divider"></li>
+                  <li><%= link_to "user info", users_index_path %></li>
+              <% end %>
 
-          <% if user_signed_in? && current_user.admin? %>
+              <% if user_signed_in? %>
+                  <li class="divider"></li>
+                  <li><%= link_to "project", projects_path %></li>
+              <% end %>
               <li class="divider"></li>
-              <li><%= link_to "manage website",seller_path%></li>
-          <% end %>
+              <li><%= link_to "website", websites_path %></li>
+
+              <% if user_signed_in? && current_user.admin? %>
+                  <li class="divider"></li>
+                  <li><%= link_to "manage website", seller_path %></li>
+              <% end %>
 
 
             </ul>
@@ -56,9 +57,9 @@
 
         <ul class="nav navbar-nav navbar-right">
           <% if user_signed_in? %>
-              <li><%= link_to "Sign out",destroy_user_session_path,method: :delete,class: "btn btn-primary btn-outline btn-rounded light border-color-degr" %></li>
+              <li><%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "btn btn-primary btn-outline btn-rounded light border-color-degr" %></li>
           <% else %>
-              <li><%= link_to "Sign in",new_user_session_path,class: "btn btn-primary btn-outline btn-rounded light border-color-degr" %></li>
+              <li><%= link_to "Sign in", new_user_session_path, class: "btn btn-primary btn-outline btn-rounded light border-color-degr" %></li>
           <% end %>
 
         </ul>

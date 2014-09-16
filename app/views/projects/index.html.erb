@@ -65,7 +65,7 @@
                         <td><%= project.id %></td>
                         <td><%= link_to "Write new review", new_project_review_path(project) %></td>
                         <td><%= link_to 'Show', project %></td>
-                        <% if current_user.manager? %>
+                        <% if user_signed_in? && current_user.manager? %>
                             <td><%= link_to 'Edit', edit_project_path(project) %></td>
                             <td><%= link_to 'Destroy', project, method: :delete, data: {confirm: 'Are you sure?'} %></td>
                         <% end %>

@@ -17,30 +17,31 @@
 
 
 
+<% if user_signed_in? && current_user.admin? %>
 
+    <p id="notice"><%= notice %></p>
 
-<p id="notice"><%= notice %></p>
+    <p>
+      <strong>Name:</strong>
+      <%= @website.name %>
+    </p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @website.name %>
-</p>
+    <p>
+      <strong>Url:</strong>
+      <%= @website.url %>
+    </p>
 
-<p>
-  <strong>Url:</strong>
-  <%= @website.url %>
-</p>
+    <p>
+      <strong>Description:</strong>
+      <%= @website.description %>
+    </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @website.description %>
-</p>
+    <p>
+      <strong>Price:</strong>
+      <%= @website.price %>
+      <%= link_to "Buy It Now", new_website_order_path(@website), class: "btn btn-primary", data: {no_turbolink: true} %>
+    </p>
 
-<p>
-  <strong>Price:</strong>
-  <%= @website.price %>
-  <%= link_to "Buy It Now", new_website_order_path(@website), class: "btn btn-primary", data: { no_turbolink: true } %>
-</p>
-
-<%= link_to 'Edit', edit_website_path(@website) %> |
-<%= link_to 'Back', websites_path %>
+    <%= link_to 'Edit', edit_website_path(@website) %> |
+    <%= link_to 'Back', websites_path %>
+<% end %>
