@@ -8,18 +8,12 @@
         <a href="#">
 
 
-          <p><%= image_tag yield(:image_profile), class: "image-profile margin-profile img-circle border-profile"  %>
+          <p><%= image_tag current_user.profileimg.url(:medium),class: "image-profile margin-profile img-circle border-profile" %></p>
 
 
-              <%= link_to profile_path do%>
-              <span class="name"><%= yield(:user_name)%></span>
+            <p class="name"><%= link_to current_user.name,profile_path %></p>
 
-              <% end%></p>
 
-          <p>hello
-            <%= current_user.name %>
-            <%= image_tag current_user.profileimg.url(:medium),class: "image-profile margin-profile img-circle border-profile" %>
-          </p>
 
 
 

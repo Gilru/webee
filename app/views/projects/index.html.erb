@@ -1,7 +1,4 @@
-<% @users.each do |user| %>
-    <% provide(:user_name, "#{user.name if user == current_user}") %>
-    <% provide(:image_profile, "#{user.profileimg.url(:medium) if user == current_user}") %>
- <% end %>
+
 
 
 <% if user_signed_in? && current_user.manager? %>

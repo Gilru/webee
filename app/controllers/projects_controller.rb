@@ -19,7 +19,7 @@ class ProjectsController < ApplicationController
   # GET /projects.json
   def index
     @projects = Project.all
-    @users = User.all
+
   end
 
   # GET /projects/1
