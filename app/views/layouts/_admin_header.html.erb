@@ -1,58 +1,54 @@
+<!-- Sidebar -->
+<div id="sidebar-wrapper">
+  <ul class="sidebar-nav">
+    <li class="sidebar-brand margin-name">
+      <a href="#">
 
 
-
-  <!-- Sidebar -->
-  <div id="sidebar-wrapper">
-    <ul class="sidebar-nav">
-      <li class="sidebar-brand margin-name">
-        <a href="#">
+        <p><%= image_tag current_user.profileimg.url(:medium), class: "image-profile margin-profile img-circle border-profile" %></p>
 
 
-          <p><%= image_tag current_user.profileimg.url(:medium),class: "image-profile margin-profile img-circle border-profile" %></p>
+        <p class="name"><%= link_to current_user.name, profile_path %></p>
 
 
-            <p class="name"><%= link_to current_user.name,profile_path %></p>
+        <!--link_to "#{yield(:user_name)}",profile_path -->
 
-
-
-
-
-
-
-          <!--link_to "#{yield(:user_name)}",profile_path -->
-
-        </a>
-      </li>
-      <li>
-        <a href="#">Dashboard</a>
-      </li>
-
+      </a>
+    </li>
     <% if user_signed_in? && current_user.manager? %>
-      <li>
-        <%= link_to "Sales History",sales_path %>
-      </li>
+        <li>
+          <%= link_to "User Info", users_index_path %>
+        </li>
     <% end %>
 
-      <li>
-        <%= link_to "Purchase History",purchases_path %>
-      </li>
-      <li>
-        <%= link_to "Edit My Account",edit_user_registration_path %>
-      </li>
-      <li>
-        <a href="#">About</a>
-      </li>
-      <li>
-        <a href="#">Services</a>
-      </li>
-      <li>
-        <a href="#">Contact</a>
-      </li>
-      <li>
-        <%= link_to "home", root_path %>
-      </li>
-    </ul>
-  </div>
-  <!-- /#sidebar-wrapper -->
+    <% if user_signed_in? && current_user.manager? %>
+        <li>
+          <%= link_to "Sales History", sales_path %>
+        </li>
+    <% end %>
+
+    <li>
+      <%= link_to "Purchase History", purchases_path %>
+    </li>
+    <li>
+      <%= link_to "Edit My Account", edit_user_registration_path %>
+    </li>
+    <% if user_signed_in? %>
+    <li>
+        <li><%= link_to "Project", projects_path %></li>
+    </li>
+    <% end %>
+    <li>
+      <a href="#">Services</a>
+    </li>
+    <li>
+      <a href="#">Contact</a>
+    </li>
+    <li>
+      <%= link_to "home", root_path %>
+    </li>
+  </ul>
+</div>
+<!-- /#sidebar-wrapper -->
 
 
