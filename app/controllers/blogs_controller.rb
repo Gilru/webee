@@ -3,6 +3,8 @@ class BlogsController < ApplicationController
   before_action :authenticate_user!, except: [:search,:index, :show]
   before_action :check_user_and_manager, except: [:search, :index,:show]
 
+  layout "application"
+
 
 
 
@@ -18,7 +20,7 @@ class BlogsController < ApplicationController
   # GET /blogs
   # GET /blogs.json
   def index
-    @blogs = Blog.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 1)
+    @blogs = Blog.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 4)
   end
 
   # GET /blogs/1

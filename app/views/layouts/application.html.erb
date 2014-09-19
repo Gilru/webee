@@ -9,7 +9,7 @@
   <%= tag :meta, :name => "stripe-key", :content => ENV["STRIPE_PUBLIC_KEY"] %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body class="<%= yield(:background_color_blog) %>">
   <%= render 'layouts/flash' %>
   <%= render 'layouts/header' %>
 

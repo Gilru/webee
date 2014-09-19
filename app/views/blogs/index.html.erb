@@ -1,3 +1,7 @@
+
+<% provide(:background_color_blog,'background-blog-color') %>
+
+
 <!--form search beginning-->
 <%= form_tag search_blogs_path, method: :get do %>
     <p>
@@ -8,45 +12,69 @@
 
 <!--form search-->
 
+<!--=====================Blog S===========================================-->
 
 
-<div class="row">
-  <div class="col-md-3"></div>
-  <div class="col-md-6">
-    <% @blogs.each do |blog| %>
-        <div class="img-padding">
-        <%= pin_it_button media: image_url(blog.image.url),
-                          description: blog.content,
-                          url: blog %>
-         </div>
+<% @blogs.each do |blog| %>
 
-        <%= image_tag blog.image.url(:medium), class: "img-responsive" %>
+<div class="container">
+  <div class="row">
 
-        <h1 class="font-size-title thin center color-title-growth"><%= blog.title %></h1>
+    <div class="col-md-12">
 
-        <h2 class="font-size-subtitle thin lato center color-title-growth"><%= blog.sub_title %></h2>
-
-        <h3 class="font-size-date center growth-p light">date by(<%= blog.user.name if blog.user %>) and number of
-          comment</h3>
-
-        <p class="font-size-p growth-p light"><%= blog.content %></p>
+      <div>
+        <div class="panel-body blog-background-panel">
 
 
-    <% end %>
+
+          <!--/stories-->
+          <div class="row">
+            <br>
+            <div class="col-md-2 col-sm-3 text-center">
+              <%= image_tag blog.user.profileimg.url(:medium), class: "img-circle border-profile profile-blog-color",style: "width:100px;height:100px" %>
+
+            </div>
+            <div class="col-md-10 col-sm-9">
+              <h3 class="light color-title-growth margin-title-blog"><%= blog.title %></h3>
+              <div class="row">
+                <div class="col-xs-9">
+                  <h4><span class="label label-default"><%= blog.user.name %></span></h4><h4>
+                  <small style="font-family:courier,'new courier';" class="text-muted"><%= time_ago_in_words(blog.created_at) %> ago  • <%= link_to "Read More",blog_path(blog) %></small>
+                </h4></div>
+                <div class="col-xs-3"></div>
+              </div>
+              <br><br>
+            </div>
+          </div>
+          <hr>
+
+
+          <!--/stories-->
+
+
+
+
+
+        </div>
+      </div>
+
+
+
+    </div><!--/col-12-->
   </div>
-  <div class="col-md-3"></div>
 </div>
 
-<br/>
+<% end %>
 
 
-<div class="row">
-  <div class="col-md-3"></div>
-  <div class="col-md-6">
-    <%= will_paginate @blogs, renderer: BootstrapPagination::Rails,class:"margin-page-navi" %>
-    <div class="col-md-3"></div>
-  </div>
-</div>
+
+
+<!--====================Blog end==========================================-->
+
+
+
+
+<%= will_paginate @blogs, renderer: BootstrapPagination::Rails,class:"margin-page-navi" %>
 
 
 
