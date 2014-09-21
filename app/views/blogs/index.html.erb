@@ -3,22 +3,13 @@
 <% provide(:visibility_search_website,'hidden') %>
 
 
-<!--form search beginning-->
-<%= form_tag search_blogs_path, method: :get do %>
-    <p>
-      <%= text_field_tag :search, params[:search],class: "form-control" %>
-      <%= submit_tag "Search", name: nil,class: "btn btn-default" %>
-    </p>
-<% end %>
-
-<!--form search-->
 
 <!--=====================Blog S===========================================-->
 
 
 <% @blogs.each do |blog| %>
 
-<div class="container">
+<div class="container padding-top-blog">
   <div class="row">
 
     <div class="col-md-12">
@@ -31,14 +22,14 @@
           <!--/stories-->
           <div class="row">
             <br>
-            <div class="col-md-2 col-sm-3 text-center">
-              <%= image_tag blog.user.profileimg.url(:medium), class: "img-circle border-profile profile-blog-color",style: "width:100px;height:100px" %>
+            <div class="col-md-12 col-sm-12 text-center">
+              <%= image_tag blog.user.profileimg.url(:medium), class: "img-circle border-profile profile-blog-color",style: "width:120px;height:120px" %>
 
             </div>
-            <div class="col-md-10 col-sm-9">
-              <h3 class="light color-title-growth margin-title-blog"><%= blog.title %></h3>
+            <div class="col-md-12 col-sm-12">
+              <h3 class="light color-title-growth center"><%= blog.title %></h3>
               <div class="row">
-                <div class="col-xs-9">
+                <div class="col-md-12 col-xs-9 center">
                   <h4><span class="label label-default"><%= blog.user.name %></span></h4><h4>
                   <small style="font-family:courier,'new courier';" class="text-muted"><%= time_ago_in_words(blog.created_at) %> ago  • <%= link_to "Read More",blog_path(blog) %></small>
                 </h4></div>

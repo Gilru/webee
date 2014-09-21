@@ -1,7 +1,18 @@
 <% provide(:visibility_search_website,'hidden') %>
 
 <% if @blogs.blank? %>
-  <h3> No result found</h3>
+    <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-6 padding-top-blog center">
+        <i class="ti-help-alt search-icon-size-and-color"></i>
+
+        <h1 class="font-size-title thin color-degr">No result found</h1>
+      </div>
+      <div class="col-md-3"></div>
+    </div>
+
+
+
 <% end %>
 
 
@@ -25,7 +36,7 @@
         <h3 class="font-size-date center growth-p light">date by(<%= blog.user.name if blog.user %>) and number of
           comment</h3>
 
-        <p class="font-size-p growth-p light"><%= blog.content %></p>
+        <p class="font-size-p growth-p light"><%= truncate(blog.content,lenght:40) %></p>
 
 
     <% end %>
