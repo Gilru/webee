@@ -26,6 +26,8 @@
                 <li><%= link_to "why us", info_why_us_path, class: "hover-why-us size-menu light" %>
                 <li class="divider"></li>
                 <li><%= link_to "blog", blogs_path %></li>
+                <li class="divider"></li>
+                <li><%= link_to "website", websites_path %></li>
             <% if user_signed_in? && current_user.manager? %>
                 <li class="divider"></li>
                 <li><%= link_to "user info", users_index_path %></li>

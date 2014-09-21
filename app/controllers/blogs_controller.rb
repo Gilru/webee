@@ -12,7 +12,7 @@ class BlogsController < ApplicationController
     if params[:search].present?
       @blogs = Blog.search(params[:search])
     else
-      @blogs = Blog.all.order("created_at DESC")
+      @blogs = Blog.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 1)
     end
   end
 

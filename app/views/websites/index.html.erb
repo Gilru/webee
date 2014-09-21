@@ -1,4 +1,4 @@
-
+<% provide(:visibility_search_blog,'hidden') %>
 <% provide(:icon_color, 'green-ic') %>
 
   <!--form search beginning-->
@@ -47,7 +47,7 @@
   <% end %>
 </div>
 <br/>
-<%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
+<%= will_paginate @websites, renderer: BootstrapPagination::Rails %>
 
 <br>
 

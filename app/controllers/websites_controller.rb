@@ -12,7 +12,7 @@ class WebsitesController < ApplicationController
     if params[:search].present?
        @websites = Website.search(params[:search])
     else
-       @websites = Website.all.paginate(:page => params[:page], :per_page => 4)
+       @websites = Website.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 4)
     end
   end
 

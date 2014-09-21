@@ -1,3 +1,9 @@
+<% if @websites.blank? %>
+    <h3> No result found</h3>
+<% end %>
+
+
+<% provide(:visibility_search_blog,'hidden') %>
 <div class="row">
   <% @websites.each do |website| %>
       <div class="col-md-3 center">
