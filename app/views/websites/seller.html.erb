@@ -1,3 +1,6 @@
+<% provide(:visibility_search_blog,'hidden') %>
+<% provide(:visibility_search_website,'hidden') %>
+
 <% if user_signed_in? && current_user.admin? %>
 
 <!--form search beginning-->
@@ -66,6 +69,7 @@
 
 <br>
 
-<%= link_to 'New Website', new_website_path %>
+<%= link_to 'New Website', new_website_path %> |
+<%= link_to "New Category", new_category_path %>
 
 <% end %>

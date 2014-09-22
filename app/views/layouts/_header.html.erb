@@ -92,10 +92,28 @@
         <!--======end=================-->
 
 
+
+
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+        <div class="btn-group margin-browse-button <%= yield(:browse_website_visibility) %>">
+          <button type="button" class="btn btn-info">Browse by Field</button>
+          <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+            <span class="caret"></span>
+            <span class="sr-only">Toggle Dropdown</span>
+          </button>
+          <ul class="dropdown-menu" role="menu">
+            <% Category.all.each do |category| %>
+
+                <li><%= link_to category.name,websites_path(category: category.name) %></li>
+            <%end %>
+
+
+          </ul>
+        </div>
 
 
         <ul class="nav navbar-nav navbar-right">

@@ -1,38 +1,15 @@
+<% provide(:background_color_blog,'background-blog-color') %>
 <% provide(:visibility_search_blog,'hidden') %>
 <% provide(:icon_color, 'green-ic') %>
 
-  <!--form search beginning-->
-     <%= form_tag search_websites_path, method: :get do %>
-    <p>
-      <%= text_field_tag :search, params[:search],class: "form-control" %>
-      <%= submit_tag "Search", name: nil,class: "btn btn-default" %>
-    </p>
-    <% end %>
 
-<!--form search-->
-<!-- Split button -->
-<div class="btn-group">
-  <button type="button" class="btn btn-danger">Browse</button>
-  <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown">
-    <span class="caret"></span>
-    <span class="sr-only">Toggle Dropdown</span>
-  </button>
-  <ul class="dropdown-menu" role="menu">
-    <% Category.all.each do |category| %>
-
-    <li><%= link_to category.name,websites_path(category: category.name) %></li>
-  <%end %>
-
-
-  </ul>
-</div>
 
 
 <!--======================dropdown list end ==========================-->
 <div class="row">
   <% @websites.each do |website| %>
-      <div class="col-md-3 center">
-        <div class="thumbnail">
+      <div class="col-md-3 center padding-top-blog">
+        <div class="thumbnail no-border-website-list">
           <%= image_tag website.webimg.url(:medium) %>
           <!--link_to image_tag(listing.image.url), listing-->
           <div class="caption">
