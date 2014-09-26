@@ -6,6 +6,7 @@ source 'https://rubygems.org'
 gem 'rails', '~> 4.1.5'
 gem 'bootstrap-sass', '~> 3.2.0.1'
 gem 'sass-rails', '~> 4.0.3'
+gem 'compass-rails', '~> 2.0.0'
 gem 'foundation-icons-sass-rails', '~> 3.0.0'
 gem 'font-awesome-sass'
 gem "animate-rails"
@@ -18,6 +19,9 @@ gem 'jquery-placeholder-rails'
 gem 'imagesLoaded_rails'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'bourbon'
+gem 'bitters'
+gem 'neat'
+gem 'icheck-rails', '~> 1.0.2.1'
 gem 'paperclip', '~> 4.2.0'
 gem "paperclip-dropbox", ">= 1.1.7"
 gem "figaro"
