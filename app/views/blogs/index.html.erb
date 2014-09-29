@@ -16,7 +16,7 @@
     <div class="col-md-12">
 
       <div>
-        <div class="panel-body blog-background-panel">
+        <div class="panel-body blog-background-panel border-bottom-blog-style margin-bottom-social">
 
 
 
@@ -32,14 +32,44 @@
               <div class="row">
                 <div class="col-md-12 col-xs-9 center">
                   <h4><span class="label label-default"><%= blog.user.name %></span></h4><h4>
-                  <small style="font-family:courier,'new courier';" class="text-muted"><%= time_ago_in_words(blog.created_at) %> ago  • <%= link_to "Read More",blog_path(blog) %></small>
+                  <small style="font-family:courier,'new courier';" class="text-muted"><i class="ti-calendar"></i> <%= time_ago_in_words(blog.created_at) %> ago  • <%= link_to "Read More",blog_path(blog) %> <i class="ti-plus border-icon"></i></small>
                 </h4></div>
                 <div class="col-xs-3"></div>
               </div>
               <br><br>
             </div>
           </div>
-          <hr>
+  <!--=================== Social Button Beginning =================== -->
+          <div class="row">
+
+            <div class="col-md-3">
+              <%= link_to "#", class: "btn btn-info btn-fill btn-lg social-style" do %>
+                  <i class="fa fa-twitter fa-lg"> <b>Tweet</b> Us Something</i>
+
+              <% end %>
+            </div>
+
+            <div class="col-md-3">
+              <%= link_to '#', class: "btn btn-primary btn-fill btn-lg" do %>
+                  <i class="fa fa-facebook-square fa-lg"> Like Us On <b>Facebook</b></i>
+
+              <% end %>
+            </div>
+
+            <div class="col-md-3">
+              <%= link_to '#', class: "btn btn-danger btn-fill btn-lg" do %>
+                  <i class="fa fa-google-plus fa-lg"> Find Us on <b>Google+</b></i>
+
+              <% end %>
+            </div>
+            <div class="col-md-3">
+              <%= link_to '#', class: "btn btn-primary btn-fill btn-lg color-linkedin" do %>
+                  <i class="fa fa-linkedin-square fa-lg"> Find Us On <b>LinkedIn</b></i>
+
+              <% end %>
+            </div>
+
+          </div>
 
 
           <!--/stories-->
