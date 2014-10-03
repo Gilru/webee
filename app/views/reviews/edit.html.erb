@@ -1,6 +1,12 @@
-<h1>Editing review</h1>
+<div id="page-content-wrapper">
+  <div class="container-fluid">
 
-<%= render 'form' %>
+    <h1>Editing review</h1>
 
-<%= link_to 'Show', project_review_path(@project,@review) %> |
-<%= link_to 'Back', project_path(@project) %>
+    <%= render 'form' %>
+
+    <%= link_to 'Show', project_review_path(@project, @review) %> |
+    <%= link_to 'Back', project_path(@project) %>
+
+  </div>
+</div>

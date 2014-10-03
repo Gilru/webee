@@ -33,4 +33,15 @@ class UserNotifier < ActionMailer::Base
 
   end
 
+  def send_confirmation_review_ready(user, admin)
+    @user = user
+    @admin = admin
+
+    admin = "mont-phil@outlook.com"
+
+    mail(:to => ["#{@user.email}", "#{admin}"],
+         :subject => 'We answer your question!')
+
+  end
+
 end

@@ -5,6 +5,8 @@ class ReviewsController < ApplicationController
   before_action :check_user_and_manager, only: [:edit,:update,:destroy]
   before_action :check_user, only:  [:edit,:update,:destroy]
 
+  layout "admin"
+
   # GET /reviews
   # GET /reviews.json
   def index
@@ -34,9 +36,12 @@ class ReviewsController < ApplicationController
 
     respond_to do |format|
       if @review.save
-
-        # Deliver the confirmation
-        UserNotifier.send_confirmation_review(@review.project.user,self).deliver
+        if current_user.admin?
+          # Deliver the confirmation
+          UserNotifier.send_confirmation_review_ready(@review.project.user, self).deliver
+        else
+          UserNotifier.send_confirmation_review(@review.project.user, self).deliver
+        end
 
         format.html { redirect_to @project, notice: 'Review was successfully created.' }
         format.json { render :show, status: :created, location: @review }
@@ -52,7 +57,7 @@ class ReviewsController < ApplicationController
   def update
     respond_to do |format|
       if @review.update(review_params)
-        format.html { redirect_to @review, notice: 'Review was successfully updated.' }
+        format.html { redirect_to project_path(@project), notice: 'Review was successfully updated.' }
         format.json { render :show, status: :ok, location: @review }
       else
         format.html { render :edit }
