@@ -1,13 +1,21 @@
 class OrdersController < ApplicationController
   before_action :set_order, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
-  before_action :check_user_and_manager, only: [:search,:sales]
+  before_action :check_user_and_manager, only: [:all_order,:search,:sales]
+  before_action :check_user_and_admin, only: [:sales]
+
   layout "admin"
+
+
+  def all_order
+    @orders = Order.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 4)
+  end
 
 
   def search
     if params[:search].present?
       @orders = Order.search(params[:search])
+
     else
       @orders = Order.all.order("created_at DESC")
     end
@@ -65,7 +73,7 @@ class OrdersController < ApplicationController
         UserNotifier.send_purchase_confirmation(current_user,self).deliver
 
 
-        format.html { redirect_to root_url}
+        format.html { redirect_to purchases_path}
         format.json { render :show, status: :created, location: @order }
       else
         format.html { render :new }
@@ -85,6 +93,12 @@ class OrdersController < ApplicationController
 
   def check_user_and_manager
     unless current_user.manager?
+      redirect_to root_url, alert: "Sorry only manager can have access"
+    end
+  end
+
+  def check_user_and_admin
+    unless current_user.admin?
       redirect_to root_url, alert: "Sorry only manager can have access"
     end
   end

@@ -1,11 +1,7 @@
-
-
-
 <div id="page-content-wrapper">
   <div class="container-fluid">
 
-
-    <h1 class="thin center">Your Sales History</h1>
+    <h1 class="thin center">All Orders</h1>
 
     <table class="table table-striped table-hover table-bordered">
       <thead>
@@ -13,8 +9,9 @@
         <th>Image</th>
         <th>Item</th>
         <th>Price</th>
-        <th>Customer</th>
-        <th>Date sold</th>
+        <th>Seller</th>
+        <th>Buyer</th>
+        <th>Date Purchased</th>
 
       </tr>
       </thead>
@@ -25,6 +22,7 @@
             <td><%= image_tag order.website.webimg.url(:medium), class: "image-profile" %></td>
             <td><%= order.website.name %></td>
             <td><%= number_to_currency(order.website.price) %></td>
+            <td><%= order.seller.name %></td>
             <td><%= order.buyer.name %></td>
             <td class="center"><%= order.created_at.strftime("%B %-d, %Y") %></td>
 
@@ -33,11 +31,8 @@
       <% end %>
       </tbody>
     </table>
+    <%= will_paginate @orders, renderer: BootstrapPagination::Rails %>
 
-    <br>
-    <% if user_signed_in? && current_user.admin? %>
-    <%= link_to 'New Website', new_website_path %>
-    <% end %>
 
   </div>
 </div>

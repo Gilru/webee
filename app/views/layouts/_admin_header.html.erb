@@ -17,11 +17,17 @@
     </li>
     <% if user_signed_in? && current_user.manager? %>
         <li>
-          <%= link_to "User Info", users_index_path %>
+          <%= link_to "All Order", all_orders_path %>
         </li>
     <% end %>
 
     <% if user_signed_in? && current_user.manager? %>
+        <li>
+          <%= link_to "User Info", users_index_path %>
+        </li>
+    <% end %>
+
+    <% if user_signed_in? && current_user.admin? %>
         <li>
           <%= link_to "Sales History", sales_path %>
         </li>

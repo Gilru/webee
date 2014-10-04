@@ -69,6 +69,7 @@ Rails.application.routes.draw do
   get 'seller' => "websites#seller"
   get 'sales' => "orders#sales"
   get 'purchases' => "orders#purchases"
+  get 'all_orders' => "orders#all_order"
 
 
 
