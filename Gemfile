@@ -5,6 +5,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '~> 4.1.5'
 gem 'bootstrap-sass', '~> 3.2.0.1'
+gem 'bootstrap-material-design', '~> 0.0.2'
 gem 'sass-rails', '~> 4.0.3'
 gem 'compass-rails', '~> 2.0.0'
 gem 'foundation-icons-sass-rails', '~> 3.0.0'

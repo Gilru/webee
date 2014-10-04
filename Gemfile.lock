@@ -37,7 +37,9 @@ GEM
       bourbon (>= 3.2)
       sass (>= 3.2)
       thor
-    bootstrap-sass (3.2.0.1)
+    bootstrap-material-design (0.0.2)
+      bootstrap-sass (= 3.2.0.2)
+    bootstrap-sass (3.2.0.2)
       sass (~> 3.2)
     bourbon (3.2.3)
       sass (~> 3.2)
@@ -226,6 +228,7 @@ PLATFORMS
 DEPENDENCIES
   animate-rails
   bitters
+  bootstrap-material-design (~> 0.0.2)
   bootstrap-sass (~> 3.2.0.1)
   bourbon
   coffee-rails (~> 4.0.0)

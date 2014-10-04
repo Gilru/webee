@@ -71,6 +71,8 @@ Rails.application.routes.draw do
   get 'purchases' => "orders#purchases"
   get 'all_orders' => "orders#all_order"
 
+  get 'how_does_it_work' => "info#how_does_it_work"
+
 
 
 end

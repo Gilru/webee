@@ -5,10 +5,12 @@ class InfoController < ApplicationController
   end
 
   def pricing
-
   end
 
   def portofolio
+  end
+
+  def how_does_it_work
 
   end
 end
