@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a75b35cf-b61d-46ab-96d3-97f367ce420e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/info/how_does_it_work.html.erb" afterPath="$PROJECT_DIR$/app/views/info/how_does_it_work.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/info.css.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/info.css.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/webee.iml" afterPath="$PROJECT_DIR$/.idea/webee.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="webee.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,8 +28,8 @@
       <file leaf-file-name="how_does_it_work.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/info/how_does_it_work.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6448276" vertical-offset="2398" max-vertical-offset="5676">
-              <caret line="126" column="137" selection-start-line="126" selection-start-column="137" selection-end-line="126" selection-end-column="137" />
+            <state vertical-scroll-proportion="0.72068965" vertical-offset="2244" max-vertical-offset="5676">
+              <caret line="121" column="35" selection-start-line="121" selection-start-column="35" selection-end-line="121" selection-end-column="35" />
               <folding>
                 <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
@@ -786,8 +783,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/info/how_does_it_work.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6448276" vertical-offset="2398" max-vertical-offset="5676">
-          <caret line="126" column="137" selection-start-line="126" selection-start-column="137" selection-end-line="126" selection-end-column="137" />
+        <state vertical-scroll-proportion="0.72068965" vertical-offset="2244" max-vertical-offset="5676">
+          <caret line="121" column="35" selection-start-line="121" selection-start-column="35" selection-end-line="121" selection-end-column="35" />
           <folding>
             <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
