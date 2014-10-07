@@ -1,4 +1,4 @@
-
+<% provide(:title_page, "#{@website.name} - #{number_to_currency(@website.price)} ") %>
 
 <div class="devices" id="device1">
   <iframe id="iframe" src=" <%= @website.url %>"
