@@ -274,7 +274,7 @@ label {
   padding: 10px 20px 10px 20px;
   background: -webkit-linear-gradient(top right,#008cdd, #23afff);
   border-radius: 10px;
-  opacity: 0.70;
+  opacity: 0.85;
 
 }
 
@@ -306,7 +306,39 @@ label {
 
 .background-our-team{
   background-color: #fafbfc;
+  opacity: 0.85;
 }
+
+.icon-feauture{
+  color: #ffffff;
+  background-image: linear-gradient(-224deg,#008cdd 0%,#23afff 100%);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color: transparent;
+  font-size: 20px;
+  opacity: 0.85;
+}
+
+.border-icon-call-us{
+  border-radius: 100%;
+  border: 3px solid #ff5a5f;
+  padding: 10px;
+}
+
+.icon-call-us-colorfont{
+  color: #ffffff;
+  background-image: linear-gradient(-224deg,#ff2b67 0%,#ff593b 100%);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color: transparent;
+  font-size: 30px;
+  opacity: 0.85;
+}
+.margin-call-us-help{
+
+  margin-top: 30px;
+  line-height: 25px;
+
+}
+
 
 
 @import "bootstrap";
