@@ -140,7 +140,7 @@ label {
 }
 
 .border-bottom {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid #ecf0f2;
 }
 
 .margin-job {
@@ -161,24 +161,28 @@ label {
 }
 
 .boder-purple{
-  border-top-color: rgb(128, 127, 255) !important;
+  border-top-color: #008cdd !important;
   border-top-width: 3px !important;
+  opacity: 0.75;
 }
 
 .boder-blue{
   border-top-color: rgb(118, 188, 255) !important;
   border-top-width: 3px !important;
+  opacity: 0.75;
 }
 .hover-blue:hover{
   background-color: rgb(118, 188, 255) ;
   color: #ffffff;
   transition: background-color 0.3s ease-in, color 0.3s ease-in;
+  opacity: 0.75;
 }
 
 .hover-purple:hover{
-  background-color: rgb(128, 127, 255) ;
+  background-color: #008cdd ;
   color: #ffffff;
   transition: background-color 0.3s ease-in, color 0.3s ease-in;
+  opacity: 0.75;
 }
 //======================================FLASH=============================
 .light {
@@ -268,9 +272,40 @@ label {
   font-size: 50px;
   color: #ffffff;
   padding: 10px 20px 10px 20px;
-  background: -webkit-linear-gradient(top right,rgb(128, 127, 255), rgb(118, 188, 255));
+  background: -webkit-linear-gradient(top right,#008cdd, #23afff);
   border-radius: 10px;
+  opacity: 0.70;
 
+}
+
+.background-how-it-works {
+  background: url("https://dl.dropbox.com/s/stl0tx9mohm6kuy/vault-header.jpg?dl=0") no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 400px;
+  opacity: 0.90;
+
+
+
+}
+
+.border-ic-how-it-work{
+  border-radius: 100%;
+  border: 1px solid #ffffff;
+  padding: 2px;
+}
+
+.margin-our-team{
+  margin-bottom: 60px !important;
+}
+.margin-learn-more{
+  margin-top: -130px ;
+}
+
+.background-our-team{
+  background-color: #fafbfc;
 }
 
 
