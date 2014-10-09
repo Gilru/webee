@@ -339,6 +339,59 @@ label {
 
 }
 
+.margin-our-feauture{
+  margin-bottom: 30px !important;
+}
+
+.padding-our-shop{
+  padding-bottom: 30px !important;
+}
+
+.shop{
+  font-size: 50px;
+  color: #ffffff;
+  padding: 10px 10px 10px 20px;
+  background: -webkit-linear-gradient(top right,#ec75a2, #e24f74);
+  border-radius: 10px;
+  opacity: 0.85;
+
+}
+
+.border-shop{
+  border-bottom: 1px solid rgba(0,0,0,0.07);
+}
+
+.layout-icon{
+
+  font-size: 200px;
+  color: #838cc7;
+}
+
+.margin-layout{
+  margin-top: 30px;
+}
+
+.margin-p-shop{
+  margin-top: 80px;
+}
+//#4f5061
+
+.background-our-footer{
+  background-color: #4f5061;
+  opacity: 0.85;
+
+}
+.margin-button{
+  margin-bottom: 30px;
+
+}
+.shop-footer-size{
+  font-size: 60px;
+}
+
+.border-right-footer{
+  border-right: 1px solid #ffffff;
+}
 
 
 @import "bootstrap";
