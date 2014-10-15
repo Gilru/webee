@@ -1,8 +1,10 @@
-<div class="background-our-footer <%= yield(:footer_visibility) %>">
+<div class="<%= yield(:background_footer).presence || 'background-our-footer-info' %>
+<%= yield(:footer_visibility)%>">
+
   <div class="row">
     <div class="col-md-3"></div>
     <div class="col-md-6 margin-our-team center">
-      <h1 class="thin white margin-p-shop margin-button">CREATE AN ACCOUNT</h1>
+      <h1 class="thin <%= yield(:provide_white)%> margin-p-shop margin-button">CREATE AN ACCOUNT</h1>
       <%= link_to "#", class: "btn btn-info btn-outline btn-rounded btn-lg" do %>
           <b>GET STARTED - TODAY!</b>
       <% end %>
@@ -13,21 +15,21 @@
 
   <div class="row">
     <div class="col-md-3 center border-right-footer">
-      <i class="ti-shopping-cart white shop-footer-size"></i>
-      <h5 class="white light">Order your next website</h5>
+      <i class="ti-shopping-cart <%= yield(:provide_white)%> shop-footer-size"></i>
+      <h5 class="<%= yield(:provide_white)%> light">Order your next website</h5>
     </div>
     <div class="col-md-3 center border-right-footer">
-      <i class="ti-headphone-alt white shop-footer-size"></i>
-      <h5 class="white light"> Our Support Center Click Here</h5>
+      <i class="ti-headphone-alt <%= yield(:provide_white)%> shop-footer-size"></i>
+      <h5 class="<%= yield(:provide_white)%> light"> Our Support Center Click Here</h5>
 
     </div>
     <div class="col-md-3 center border-right-footer">
-      <i class="ti-comment white shop-footer-size"></i>
-      <h5 class="white light">We contentsly blog visit our blog</h5>
+      <i class="ti-comment <%= yield(:provide_white)%> shop-footer-size"></i>
+      <h5 class="<%= yield(:provide_white)%> light">We contentsly blog visit our blog</h5>
     </div>
     <div class="col-md-3 center">
-      <i class="ti-help white shop-footer-size"></i>
-      <h5 class="white light"> Need help? you can contact us 414-4393-4839</h5>
+      <i class="ti-help <%= yield(:provide_white)%> shop-footer-size"></i>
+      <h5 class="<%= yield(:provide_white)%> light"> Need help? you can contact us 414-4393-4839</h5>
     </div>
   </div>
 </div>
