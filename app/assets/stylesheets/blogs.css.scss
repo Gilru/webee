@@ -82,8 +82,12 @@ background-color: #f1f4f9;
 
 .border-icon{
   border-radius: 100%;
-  border: 1px solid #b3b3b3;
+  border: 1px solid #daac16;
   padding: 2px;
+}
+
+.border-icon:hover{
+  border: 1px solid #ffffff;
 }
 
 .blog-read-more-margin{

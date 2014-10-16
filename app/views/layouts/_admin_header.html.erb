@@ -15,6 +15,14 @@
 
       </a>
     </li>
+    <% if user_signed_in? %>
+    <li>
+      <%= link_to what_can_i_do_path do %>
+          <i class="ti-help-alt style-sign-out-ic"></i>
+          <span class="margin-right-menu-admin">What Can I do</span>
+      <% end %>
+    </li>
+    <% end %>
     <% if user_signed_in? && current_user.manager? %>
         <li>
           <%= link_to all_orders_path do %>
@@ -63,9 +71,6 @@
         </li>
     </li>
     <% end %>
-    <li>
-      <a href="#">Services</a>
-    </li>
     <li>
       <a href="#">Contact</a>
     </li>

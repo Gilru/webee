@@ -19,6 +19,13 @@ function showonlyone(thechosenone) {
     });
 }
 
+//==============================welcome Message==================================
+$(function(){
+    $('a[title]').tooltip();
+});
+
+//==============================welcome Message==================================
+
 
 
 //$(document).on('ready page:load', function () {

@@ -1,6 +1,9 @@
 <% provide(:visibility_search_website, 'hidden') %>
 <% provide(:browse_website_visibility, 'hidden') %>
-<% provide(:title_page, "#{@blog.title}") %>
+<% provide(:title_page, "#{@blog.title} | #{@blog.sub_title}") %>
+<% provide(:meta_description, "#{truncate(@blog.content,length: 150)}") %>
+<% provide(:author, "#{@blog.user.name if @blog.user}")%>
+
 
 
 

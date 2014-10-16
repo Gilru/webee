@@ -11,35 +11,43 @@
 
 <% @blogs.each do |blog| %>
 
-<div class="container padding-top-blog">
-  <div class="row">
+    <div class="container padding-top-blog">
+      <div class="row">
 
-    <div class="col-md-12">
+        <div class="col-md-12">
 
-      <div>
-        <div class="panel-body blog-background-panel border-bottom-blog-style margin-bottom-social">
+          <div>
+            <div class="panel-body blog-background-panel border-bottom-blog-style margin-bottom-social">
 
 
-
-          <!--/stories-->
-          <div class="row">
-            <br>
-            <div class="col-md-12 col-sm-12 text-center">
-              <%= image_tag blog.user.profileimg.url(:medium), class: "img-circle border-profile-blog",style: "width:120px;height:120px" %>
-
-            </div>
-            <div class="col-md-12 col-sm-12">
-              <h3 class="light color-title-growth center"><%= blog.title %></h3>
+              <!--/stories-->
               <div class="row">
-                <div class="col-md-12 col-xs-9 center">
-                  <h4><span class="label label-default"><%= blog.user.name %></span></h4><h4>
-                  <small style="font-family:courier,'new courier';" class="text-muted"><i class="ti-calendar"></i> <%= time_ago_in_words(blog.created_at) %> ago  • <%= link_to "Read More",blog_path(blog) %> <i class="ti-plus border-icon"></i></small>
-                </h4></div>
-                <div class="col-xs-3"></div>
+                <br>
+
+                <div class="col-md-12 col-sm-12 text-center">
+                  <%= image_tag blog.user.profileimg.url(:medium), class: "img-circle border-profile-blog", style: "width:120px;height:120px" %>
+
+                </div>
+                <div class="col-md-12 col-sm-12">
+                  <h3 class="light color-title-growth center"><%= blog.title %></h3>
+
+                  <div class="row">
+                    <div class="col-md-12 col-xs-9 center">
+                      <h4><span class="label label-default"><%= blog.user.name %></span></h4>
+                      <h4>
+                        <small style="font-family:courier,'new courier';" class="text-muted">
+                          <i class="ti-calendar"></i> <%= time_ago_in_words(blog.created_at) %> ago •
+                        </small>
+                        <%= link_to blog_path(blog), class: "btn btn-warning btn-outline btn-rounded" do %>
+                            <i class="ti-plus border-icon"></i> Read More
+                        <% end %>
+                      </h4>
+                    </div>
+                    <div class="col-xs-3"></div>
+                  </div>
+                  <br><br>
+                </div>
               </div>
-              <br><br>
-            </div>
-          </div>
   <!--=================== Social Button Beginning =================== -->
           <div class="row">
 

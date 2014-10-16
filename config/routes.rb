@@ -73,6 +73,8 @@ Rails.application.routes.draw do
 
   get 'how_does_it_work' => "info#how_does_it_work"
 
+  get 'what_can_i_do' => "info#what_can_i_do"
+
 
 
 end
