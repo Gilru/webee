@@ -5,6 +5,16 @@ $(document).on('ready page:load', function () {
     $('.touch-me a').click(function(){
          $(this).addClass('active-fill-pricing-bg').siblings().removeClass('active-fill-pricing-bg')
     });
+
+    //==============================welcome Message==================================
+    $(function(){
+        $('a[title]').tooltip();
+        $('span.margin-right-menu-admin').tooltip();
+    });
+
+//==============================welcome Message==================================
+
+
 });
 
 
@@ -19,12 +29,9 @@ function showonlyone(thechosenone) {
     });
 }
 
-//==============================welcome Message==================================
-$(function(){
-    $('a[title]').tooltip();
-});
 
-//==============================welcome Message==================================
+
+
 
 
 

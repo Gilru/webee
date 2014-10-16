@@ -14,7 +14,7 @@
   <%= csrf_meta_tags %>
   <%= tag :meta, :name => "stripe-key", :content => ENV["STRIPE_PUBLIC_KEY"] %>
 </head>
-<body class="admin-top">
+<body class="admin-top <%= yield(:background_admin) %>">
 <%= render 'layouts/flash' %>
 
 <div id="wrapper">

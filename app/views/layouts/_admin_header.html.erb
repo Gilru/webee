@@ -8,7 +8,7 @@
         <p><%= image_tag current_user.profileimg.url(:medium), class: "image-profile margin-profile img-circle border-profile" %></p>
 
 
-        <p class="name"><%= link_to current_user.name, profile_path %></p>
+        <p class="center name"><%= link_to current_user.name, profile_path %></p>
 
 
         <!--link_to "#{yield(:user_name)}",profile_path -->
@@ -19,7 +19,7 @@
     <li>
       <%= link_to what_can_i_do_path do %>
           <i class="ti-help-alt style-sign-out-ic"></i>
-          <span class="margin-right-menu-admin">What Can I do</span>
+          <span class="margin-right-menu-admin"  data-toggle="tooltip" data-placement="right" title="A List Of Activity That You Can Do">What Can I do</span>
       <% end %>
     </li>
     <% end %>
@@ -27,7 +27,7 @@
         <li>
           <%= link_to all_orders_path do %>
               <i class="ti-credit-card style-sign-out-ic"></i>
-              <span class="margin-right-menu-admin">All Orders</span>
+              <span class="margin-right-menu-admin" data-placement="right" title="Consult All Orders">All Orders</span>
           <% end %>
         </li>
     <% end %>
@@ -36,7 +36,7 @@
         <li>
           <%= link_to users_index_path do %>
             <i class="ti-info-alt style-sign-out-ic"></i>
-            <span class="margin-right-menu-admin">User Info</span>
+            <span class="margin-right-menu-admin" data-placement="right" title="All User Informations">User Info</span>
           <% end %>
         </li>
     <% end %>
@@ -45,7 +45,7 @@
         <li>
           <%= link_to sales_path do%>
             <i class="ti-receipt style-sign-out-ic"></i>
-            <span class="margin-right-menu-admin">Sales History</span>
+            <span class="margin-right-menu-admin" data-placement="right" title="Your Sales Listed">Sales History</span>
           <% end %>
         </li>
     <% end %>
@@ -53,20 +53,21 @@
     <li>
       <%= link_to purchases_path do %>
          <i class="ti-shopping-cart-full style-sign-out-ic"></i>
-          <span class="margin-right-menu-admin">Purchase History</span>
+          <span class="margin-right-menu-admin" data-placement="right" title="Consult Your Past Purchased">Purchase History</span>
       <% end %>
     </li>
     <li>
       <%= link_to edit_user_registration_path do %>
           <i class="ti-user style-sign-out-ic"></i>
-          <span class="margin-right-menu-admin">Edit Profile</span>
+          <span class="margin-right-menu-admin" data-placement="right" title="You Can Edit Your Account Here">Edit Profile</span>
       <% end %>
     </li>
     <% if user_signed_in? %>
     <li>
         <li><%= link_to projects_path do %>
           <i class="ti-folder style-sign-out-ic"></i>
-          <span class="margin-right-menu-admin">Projects</span>
+          <span class="margin-right-menu-admin" data-placement="right"
+                title="Once Your Project Created You can have access to his progress here">Projects</span>
         <% end %>
         </li>
     </li>

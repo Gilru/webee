@@ -2,7 +2,7 @@ class RegistrationsController < ApplicationController
   protected
 
   def after_sign_up_path_for(resource)
-    projects_path
+    what_can_i_do_path
   end
 
 
