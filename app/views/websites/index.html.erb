@@ -2,6 +2,8 @@
 <% provide(:visibility_search_blog,'hidden') %>
 <% provide(:icon_color, 'green-ic') %>
 <% provide(:title_page, 'Websites') %>
+<% provide(:visibility_search_website,'visible') %>
+<% provide(:browse_website_visibility, 'visible') %>
 
 
 
@@ -11,7 +13,7 @@
 <div class="row">
   <% @websites.each do |website| %>
       <div class="col-md-3 center padding-top-blog">
-        <div class="thumbnail no-border-website-list">
+        <div class="thumbnail no-border-website-list border-website-bottom">
           <%= image_tag website.webimg.url(:medium) %>
           <!--link_to image_tag(listing.image.url), listing-->
           <div class="caption">

@@ -1,5 +1,5 @@
-<% provide(:visibility_search_website,'hidden') %>
-<% provide(:browse_website_visibility,'hidden') %>
+<% provide(:visibility_search_website, 'hidden') %>
+<% provide(:browse_website_visibility, 'hidden') %>
 
 <% if @blogs.blank? %>
     <div class="row">
@@ -37,30 +37,19 @@
         <h3 class="font-size-date center growth-p light">date by(<%= blog.user.name if blog.user %>) and number of
           comment</h3>
 
-        <p class="font-size-p growth-p light"><%= truncate(blog.content,lenght:40) %></p>
+        <p class="font-size-p growth-p light"><%= truncate(blog.content, lenght: 40) %></p>
 
+        <%= link_to blog, class: "btn btn-info btn-fill btn-lg blog-read-more-margin" do %>
+            <i class="ti-plus"> <b>Read More</b></i>
+
+        <% end %>
 
     <% end %>
   </div>
   <div class="col-md-3"></div>
 </div>
 
-<br/>
-
-
-<div class="row">
-  <div class="col-md-3"></div>
-  <div class="col-md-6">
-    <% @blogs.each do |blog| %>
-        <%= link_to blog, class: "btn btn-info btn-fill btn-lg blog-read-more-margin" do %>
-            <i class="ti-plus"> <b>Read More</b></i>
-
-        <% end %>
-    <% end %>
-
-    <div class="col-md-3"></div>
-  </div>
-</div></br>
+<br/></br>
 
 <%= will_paginate @blogs, renderer: BootstrapPagination::Rails %>
 

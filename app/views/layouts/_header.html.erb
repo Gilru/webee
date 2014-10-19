@@ -54,7 +54,7 @@
 
         <!--form search beginning-->
         <%= form_tag search_blogs_path, class:"navbar-form navbar-right margin-form
-        #{yield(:visibility_search_blog)}", method: :get do %>
+        #{yield(:visibility_search_blog).presence || 'hidden'}", method: :get do %>
             <p>
               <%= text_field_tag :search, params[:search],placeholder: "Search",class: "field__input" %>
 
@@ -71,7 +71,7 @@
 
         <!--form search beginning-->
         <%= form_tag search_websites_path,class:"navbar-form navbar-right margin-form
-         #{yield(:visibility_search_website)}", method: :get do %>
+         #{yield(:visibility_search_website).presence || 'hidden'}", method: :get do %>
             <p>
               <%= text_field_tag :search, params[:search],placeholder: "Search",class: "field__input" %>
 
@@ -101,7 +101,7 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-        <div class="btn-group margin-browse-button <%= yield(:browse_website_visibility) %>">
+        <div class="btn-group margin-browse-button <%= yield(:browse_website_visibility).presence || 'hidden' %>">
           <button type="button" class="btn btn-info">Browse by Field</button>
           <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
             <span class="caret"></span>

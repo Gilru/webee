@@ -13,18 +13,29 @@
 <% end %>
 
 
+<% provide(:background_color_blog,'background-blog-color') %>
 <% provide(:visibility_search_blog,'hidden') %>
+<% provide(:icon_color, 'green-ic') %>
+<% provide(:title_page, 'Websites') %>
+<% provide(:visibility_search_website,'visible') %>
+<% provide(:browse_website_visibility, 'visible') %>
+
+
+
+
+
+<!--======================dropdown list end ==========================-->
 <div class="row">
   <% @websites.each do |website| %>
-      <div class="col-md-3 center">
-        <div class="thumbnail">
+      <div class="col-md-3 center padding-top-blog">
+        <div class="thumbnail no-border-website-list border-website-bottom">
           <%= image_tag website.webimg.url(:medium) %>
           <!--link_to image_tag(listing.image.url), listing-->
           <div class="caption">
             <h3><%= website.name %></h3>
             <p><%=number_to_currency(website.price) %></p>
             <p><%= "Sold by #{website.user.name}" %></p>
-            <%= link_to 'Show', website, class: "btn btn-link" %>
+            <%= link_to "Preview #{website.name}", website, class: "btn btn-primary btn-outline btn-rounded" %>
 
           </div>
         </div>
@@ -32,6 +43,6 @@
   <% end %>
 </div>
 <br/>
-<%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
+<%= will_paginate @websites, renderer: BootstrapPagination::Rails %>
 
 <br>
