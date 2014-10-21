@@ -17,6 +17,16 @@ else
   validates :content,:sub_title,:title, presence: true
   validates :title,:sub_title, length: {maximum: 30}
 
+  def image_url
+     image.url(:medium)
+  end
+
+  def profileimg_url
+    user.profileimg.url(:medium)
+  end
+
+
+
   searchkick
 
 
