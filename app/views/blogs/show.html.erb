@@ -3,6 +3,7 @@
 <% provide(:title_page, "#{@blog.title} | #{@blog.sub_title}") %>
 <% provide(:meta_description, "#{truncate(@blog.content,length: 150)}") %>
 <% provide(:author, "#{@blog.user.name if @blog.user}")%>
+<% provide(:go_back_blog_visibility, 'visible') %>
 
 
 
@@ -48,12 +49,3 @@
 <% end %>
 
 
-<div class="row">
-  <div class="col-md-3"></div>
-  <div class="col-md-6">
-
-    <%= link_to 'Back', blogs_path, class: "center" %>
-
-    <div class="col-md-3"></div>
-  </div>
-</div>
