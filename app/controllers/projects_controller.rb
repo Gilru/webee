@@ -13,12 +13,6 @@ class ProjectsController < ApplicationController
     end
   end
 
-  def my_project
-    
-  end
-
-
-
   # GET /projects
   # GET /projects.json
   def index
