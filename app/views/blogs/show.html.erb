@@ -42,10 +42,13 @@
       comment</h3>
 
     <p class="font-size-p growth-p light center"><%= @blog.content %></p>
+    <% if @blog.embedcode.blank? %>
 
-    <div class="embed-responsive embed-responsive-16by9 center">
-      <%= @blog.embedcode.html_safe %>
-    </div>
+    <% else %>
+        <div class="embed-responsive embed-responsive-16by9 center">
+          <%= @blog.embedcode.html_safe %>
+        </div>
+    <% end %>
 
   </div>
   <div class="col-md-3"></div>
