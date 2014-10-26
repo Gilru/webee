@@ -1,8 +1,8 @@
 <% provide(:visibility_search_website, 'hidden') %>
 <% provide(:browse_website_visibility, 'hidden') %>
 <% provide(:title_page, "#{@blog.title} | #{@blog.sub_title}") %>
-<% provide(:meta_description, "#{truncate(@blog.content,length: 150)}") %>
-<% provide(:author, "#{@blog.user.name if @blog.user}")%>
+<% provide(:meta_description, "#{truncate(@blog.content, length: 150)}") %>
+<% provide(:author, "#{@blog.user.name if @blog.user}") %>
 <% provide(:go_back_blog_visibility, 'visible') %>
 
 
@@ -21,7 +21,7 @@
 <% end %>
 
 
-|
+
 <div class="row">
   <div class="col-md-3"></div>
   <div class="col-md-6">
@@ -43,6 +43,9 @@
 
     <p class="font-size-p growth-p light center"><%= @blog.content %></p>
 
+    <div class="embed-responsive embed-responsive-16by9 center">
+      <%= @blog.embedcode.html_safe %>
+    </div>
 
   </div>
   <div class="col-md-3"></div>

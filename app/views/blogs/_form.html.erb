@@ -1,33 +1,42 @@
 <%= form_for @blog, html: {multipart: true} do |f| %>
-  <% if @blog.errors.any? %>
-    <div id="error_explanation" class="red">
-      <h2><%= pluralize(@blog.errors.count, "error") %> prohibited this blog from being saved:</h2>
+    <% if @blog.errors.any? %>
+        <div id="error_explanation" class="red">
+          <h2><%= pluralize(@blog.errors.count, "error") %> prohibited this blog from being saved:</h2>
 
-      <ul>
-      <% @blog.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+          <ul>
+            <% @blog.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
     <div class="form-group">
-      <%= f.label :image %><br>
+      <%= f.label :image %>
+      <br>
       <%= f.file_field :image, autofocus: true, class: "form-control" %>
     </div>
 
-  <div class="form-group">
-    <%= f.label "Title (this is your primary keyword should be under 30 characters)" %><br>
-    <%= f.text_field :title, class: "form-control" %>
-  </div>
-  <div class="form-group">
-    <%= f.label "Subtitle (this is your secondary keyword should be under 30 characters)" %><br>
-    <%= f.text_field :sub_title, class: "form-control" %>
-  </div>
-  <div class="form-group">
-    <%= f.label "Content (Your 150 first characters will be your meta description)" %><br>
-    <%= f.text_area :content, class: "form-control" %>
-  </div>
-  <div>
-    <%= f.submit class:"btn btn-default" %>
-  </div></br>
+    <div class="form-group">
+      <%= f.label "Title (this is your primary keyword should be under 30 characters)" %>
+      <br>
+      <%= f.text_field :title, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label "Subtitle (this is your secondary keyword should be under 30 characters)" %>
+      <br>
+      <%= f.text_field :sub_title, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label "Content (Your 150 first characters will be your meta description)" %>
+      <br>
+      <%= f.text_area :content, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label "Put Your Embeb Code Here" %>
+      <br>
+      <%= f.text_area :embedcode, class: "form-control" %>
+    </div>
+    <div>
+      <%= f.submit class: "btn btn-default" %>
+    </div></br>
 <% end %>
