@@ -24,13 +24,13 @@
 
 <div class="row">
   <div class="col-md-3"></div>
-  <div class="col-md-6">
+  <article class="col-md-6">
 
-    <div class="img-padding">
+    <figure class="img-padding">
       <%= pin_it_button media: image_url(@blog.image.url),
                         description: @blog.content,
                         url: @blog %>
-    </div>
+    </figure>
 
     <%= image_tag @blog.image.url(:medium), class: "img-responsive" %>
 
@@ -42,15 +42,27 @@
       comment</h3>
 
     <p class="font-size-p growth-p light center"><%= @blog.content %></p>
-    <% if @blog.embedcode.blank? %>
+    <% if @blog.embedcode.blank? && @blog.embbedsecond.blank? %>
 
     <% else %>
-        <div class="embed-responsive embed-responsive-16by9 center">
-          <%= @blog.embedcode.html_safe %>
-        </div>
+        <% if @blog.embedcode.blank? %>
+        <% else %>
+            <div class="embed-responsive embed-responsive-16by9 center">
+              <%= @blog.embedcode.html_safe if @blog.embedcode %>
+            </div>
+        <% end %>
+
+        <% if @blog.embbedsecond.blank? %>
+
+        <% else %>
+
+            <div class="embed-responsive embed-responsive-16by9 center margin-embed-top">
+              <%= @blog.embbedsecond.html_safe if @blog.embbedsecond %>
+            </div>
+        <% end %>
     <% end %>
 
-  </div>
+  </article>
   <div class="col-md-3"></div>
 </div>
 
