@@ -2,9 +2,11 @@
 <% provide(:icon_color, 'purple') %>
 <% provide(:toggle_nav, 'white') %>
 <% provide(:bars, 'white') %>
+<% provide(:visibility_brand_info,'hidden') %>
 <% provide(:signout, 'white') %>
 <% provide(:signin, 'white') %>
 <% provide(:border_cross_menu_color, 'border-cross-menu-purple') %>
+
 
 
 <div class="background-why-main">
@@ -53,7 +55,7 @@
 
 
       <a class="btn btn-default btn-lg pill-style-whyus light pill-info-widht center active-fill-info-bg"
-      id="myHeader1" href="javascript:showonlyone('newboxes1');">Web Application Developement</a>
+      id="myHeader1" href="javascript:showonlyone('newboxes1');">Web Application Developement </a>
 
       <a class="btn btn-default btn-lg pill-style-whyus light pill-info-widht center" id="myHeader2"
          href="javascript:showonlyone('newboxes2');">Responsive Web design</a>
@@ -67,7 +69,50 @@
 
 <div class="content-container">
 
-  <div id="newboxes1" class="newboxes"><h1>WEB DEVELOPEMENT</h1></div>
+  <div id="newboxes1" class="newboxes">
+    <!--<h1>WEB DEVELOPEMENT</h1>-->
+
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-2 center">
+        <div class="ic-margin-top-bottom">
+        <i class="ti-lock ic-why-us-purple"></i>
+        </div>
+        <h5 class="color-title-growth">security features</h5>
+        <p class="light growth-p">we are essentially computer programmers who
+          focus on creating Web applications. </p>
+      </div>
+
+      <div class="col-md-2 center">
+        <div class="ic-margin-top-bottom">
+          <i class="ti-server ic-why-us-purple"></i>
+        </div>
+        <h5 class="color-title-growth">management systems</h5>
+        <p class="light growth-p">gather information about users, and give users
+          access to specific profiles. </p>
+      </div>
+
+      <div class="col-md-2 center">
+        <div class="ic-margin-top-bottom">
+          <i class="ti-stats-up ic-why-us-purple"></i>
+        </div>
+        <h5 class="color-title-growth">security features</h5>
+        <p class="light growth-p">we are essentially computer programmers who
+          focus on creating Web applications. </p>
+      </div>
+
+      <div class="col-md-2 center">
+        <div class="ic-margin-top-bottom">
+          <i class="ti-pie-chart ic-why-us-purple"></i>
+        </div>
+        <h5 class="color-title-growth">data management tools</h5>
+        <p class="light growth-p">we are essentially computer programmers who
+          focus on creating Web applications. </p>
+      </div>
+
+      <div class="col-md-1"></div>
+    </div>
+  </div>
   <div id="newboxes2" class="newboxes" style="display: none"><h1>Responsive Web design</h1></div>
   <div id="newboxes3" class="newboxes" style="display: none"><h1>Reducing cost</h1></div>
 

@@ -1,11 +1,15 @@
 <% if flash[:notice] %>
 
-    <p class="alert alert-success light flash-center helvetica"><%= notice %></p>
+    <p class="alert alert-success light flash-center helvetica">
+      <%= notice %> <i class="ti-check ic-flash"></i>
+    </p>
 
 <% end %>
 
 <% if flash[:alert] %>
 
-    <p class="alert alert-danger alert-dismissible light flash-center helvetica"><%= alert %></p>
+    <p class="alert alert-danger alert-dismissible light flash-center helvetica">
+      <%= alert %> <i class="ti-alert"></i>
+    </p>
 
 <% end %>
