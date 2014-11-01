@@ -20,11 +20,10 @@
 
               <% if devise_mapping.rememberable? -%>
                   <!--f.check_box :remember_me f.label :remember_me -->
-                  <label for="user_remember_me" class="control checkbox">
+                  <label for="user_remember_me" class="checkbox checkbox-blue checked">
                     <input name="user[remember_me]" type="hidden" value="0">
                     <input id="user_remember_me" name="user[remember_me]" type="checkbox" value="1">
-                    <span class="control-indicator" style="height: 1.5rem; width: 1.5rem"></span>
-                    Remember me</label>
+                    Remember me (click here)</label>
                   </br>
               <% end -%>
               </br>

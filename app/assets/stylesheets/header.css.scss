@@ -89,3 +89,12 @@
 .margin-right-menu-admin{
   margin-left: 5px;
 }
+
+
+.dropdown-menu:before{
+  visibility: hidden;
+}
+
+.dropdown-menu:after{
+  visibility: hidden;
+}

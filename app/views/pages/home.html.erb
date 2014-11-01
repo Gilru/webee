@@ -13,9 +13,9 @@
     <div class="col-md-6 center">
       <h1 class="margin-nav center-title-color thin">We Build Simple Website To Complex Web Application</h1>
       <% if user_signed_in? %>
-         <%= link_to "Go To My Account", '#', class: "btn btn-success btn-lg btn-fill new-color space light size-get-st" %>
+         <%= link_to "Go To My Account", '#', class: "btn btn-lg btn-fill btn-info new-color size-get-st space-top" %>
       <% else %>
-         <%= link_to "GET STARTED - IT'S FREE!", new_user_registration_path, class: "btn btn-success btn-lg btn-fill new-color space light size-get-st" %>
+         <%= link_to "GET STARTED - IT'S FREE!", new_user_registration_path, class: "btn btn-lg btn-fill btn-info new-color size-get-st space-top" %>
       <% end %>
 
     </div>
@@ -74,7 +74,8 @@
 <div class="row border-bottom">
     <div class="col-md-3"></div>
   <div class="col-md-6 center">
-    <%= link_to "READ MORE", '#', class: "btn btn-info btn-fill btn-lg space light margin-readme-button size-readmore" %>
+    <%= link_to "READ MORE", '#', class: "btn btn-lg btn-fill btn-info margin-readme-button size-readmore" %>
+
 
   </div>
   <div class="col-md-3"></div>
@@ -105,7 +106,11 @@
       <p class="open-sans regular">helo helo helo helo helo</p>
       <div class="caption">
 
-        <p><%= link_to "take a look",'#', class: "btn btn-link color-date-link border-link" %></p>
+        <p><%= link_to '#', class: "btn btn-lg btn-round btn-info" do %>
+            <span class="text-info">take a look</span>
+
+           <% end %>
+        </p>
 
       </div>
     </div>
@@ -118,7 +123,10 @@
       <p class="open-sans regular">helo helo helo helo helo</p>
       <div class="caption">
 
-        <p><%= link_to "take a look",'#', class: "btn btn-link color-date-link border-link" %> </p>
+        <p><%= link_to '#', class: "btn btn-lg btn-round btn-primary" do %>
+            <span class="text-primary">take a look</span>
+              <% end %>
+        </p>
       </div>
     </div>
   </div>
@@ -135,7 +143,7 @@
 
       <h1 class="open-sans light center margin-learn-more center-title-color">How does it work?</h1>
 
-         <%= link_to '#', class: "btn btn-primary btn-lg btn-fill space regular size-get-st" do %>
+         <%= link_to '#', class: "btn btn-primary btn-lg btn-fill space-top regular size-get-st" do %>
               <b>Learn More</b>
 
          <% end %>

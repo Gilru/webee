@@ -108,7 +108,7 @@ label {
 
 
 
-.space {
+.space-top {
   margin-top: 40px;
 }
 
@@ -151,14 +151,6 @@ label {
   margin-top: 20px !important;
 }
 
-.color-date-link {
-  color: rgba(0, 0, 0, 0.3) !important;
-}
-
-.border-link {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.3) !important;
-  text-decoration: none !important;
-}
 
 .boder-purple{
   border-top-color: #008cdd !important;
@@ -173,7 +165,7 @@ label {
 }
 .hover-blue:hover{
   background-color: rgb(118, 188, 255) ;
-  color: #ffffff;
+  color: #ffffff !important;
   transition: background-color 0.3s ease-in, color 0.3s ease-in;
   opacity: 0.75;
 }
@@ -406,6 +398,12 @@ label {
   padding: 10px;
   border: 1px solid #ffffff;
   border-radius: 100%;
+}
+
+.hover-team:hover{
+  border-color: #ffffff !important;
+  color: #ffffff !important;
+
 }
 
 @import "bootstrap";
