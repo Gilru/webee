@@ -4,6 +4,10 @@
 <% provide(:meta_description, "#{truncate(@blog.content, length: 150)}") %>
 <% provide(:author, "#{@blog.user.name if @blog.user}") %>
 <% provide(:go_back_blog_visibility, 'visible') %>
+<% provide(:visibility_footer_shit,'hidden') %>
+<% provide(:footer_visibility,'visible') %>
+<% provide(:visibility_social_share,'hidden') %>
+<% provide(:visibility_thank_for_sharing,'visible') %>
 
 
 <% if user_signed_in? && current_user.manager? %>
@@ -67,6 +71,33 @@
 </div>
 
 <br/>
+
+
+<!--======================================email subcription==============================================-->
+
+
+<div class="separator"></div>
+<div class="subscribe-line subscribe-line-transparent" style="background-image: url('http://37.media.tumblr.com/d77e21ed167c2125627b210b48e23f81/tumblr_na0kw25OtD1st5lhmo1_1280.jpg')">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-9">
+        <form class="">
+          <div class="form-group">
+            <input type="text" value="" class="form-control" placeholder="Enter your email...">
+          </div>
+        </form>
+      </div>
+      <div class="col-md-3">
+        <button type="button" class="btn btn-info btn-fill btn-round btn-block">Subscribe Now!</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--======================================email subcription==============================================-->
+
+
+
 
 
 

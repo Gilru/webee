@@ -1,5 +1,76 @@
+
+
+<div class="separator"></div>
+<div class="social-line <%= yield(:visibility_thank_for_sharing).presence || 'hidden' %>">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <h4 class="title light">Thank you for sharing!</h4>
+      </div>
+      <div class="col-md-2">
+        <a href="" class="btn btn-round btn-fill btn-facebook">
+          <i class="fa fa-facebook-square"></i> Share &middot; 753
+        </a>
+      </div>
+      <div class="col-md-2">
+        <a href="" class="btn btn-round btn-fill btn-twitter">
+          <i class="fa fa-twitter"></i> Tweet &middot; 832
+        </a>
+      </div>
+      <div class="col-md-2">
+        <a href="" class="btn btn-round btn-fill btn-google">
+          <i class="fa fa-google-plus-square"></i> Share &middot; 131
+        </a>
+      </div>
+      <div class="col-md-2">
+        <a href="" class="btn btn-round btn-fill btn-youtube">
+          <i class="fa fa-pinterest"></i> Pin it &middot; 323
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+
+
+
+
+<div class="social-line <%= yield(:footer_visibility).presence || 'hidden'%>
+<%= yield(:visibility_social_share) %>" id="sharing">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <h4 class="title light">We are social:</h4>
+      </div>
+      <div class="col-md-2">
+        <button class="btn btn-social btn-simple btn-facebook">
+          <i class="fa fa-facebook-square border-right-none"></i> Facebook
+        </button>
+      </div>
+      <div class="col-md-2">
+        <button class="btn btn-social btn-simple btn-twitter">
+          <i class="fa fa-twitter border-right-none"></i> Twitter
+        </button>
+      </div>
+      <div class="col-md-2">
+        <button class="btn btn-social btn-simple btn-google">
+          <i class="fa fa-google-plus-square border-right-none"></i> Google+
+        </button>
+      </div>
+      <div class="col-md-2">
+        <button class="btn btn-social btn-simple btn-linkedin">
+          <i class="fa fa-linkedin-square border-right-none"></i> Linkedin
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
 <footer class="<%= yield(:background_footer).presence || 'background-our-footer-info' %>
-<%= yield(:footer_visibility)%>">
+<%= yield(:footer_visibility).presence || 'hidden'%>">
 
   <div class="row">
     <div class="col-md-3"></div>

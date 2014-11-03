@@ -48,8 +48,8 @@
                         <small style="font-family:courier,'new courier';" class="text-muted">
                           <i class="ti-calendar"></i> <%= time_ago_in_words(blog.created_at) %> ago •
                         </small>
-                        <%= link_to blog_path(blog), class: "btn btn-warning btn-outline btn-rounded" do %>
-                            <i class="ti-plus border-icon"></i> Read More
+                        <%= link_to blog_path(blog), class: "btn btn-round btn-warning" do %>
+                            <i class="ti-plus border-icon text-warning"></i> <span class="text-warning">Read More</span>
                         <% end %>
                       </h4>
                     </div>
@@ -62,30 +62,28 @@
           <div class="row">
 
             <div class="col-md-3">
-              <%= link_to "#", class: "btn btn-info btn-fill btn-lg social-style" do %>
-                  <i class="fa fa-twitter fa-lg"></i>   <b>Tweet</b> Us Something
-
-              <% end %>
+              <button class="btn btn-social btn-simple btn-twitter">
+                <i class="fa fa-twitter border-right-none"></i> Connect with Twitter
+              </button>
             </div>
 
             <div class="col-md-3">
-              <%= link_to '#', class: "btn btn-primary btn-fill btn-lg" do %>
-                  <i class="fa fa-facebook-square fa-lg"></i>   Like Us On <b>Facebook</b>
-
-              <% end %>
+              <button class="btn btn-social btn-simple btn-facebook">
+                <i class="fa fa-facebook-square border-right-none"></i> Share · 2.2k
+              </button>
             </div>
 
             <div class="col-md-3">
-              <%= link_to '#', class: "btn btn-danger btn-fill btn-lg" do %>
-                  <i class="fa fa-google-plus fa-lg"></i>   Find Us on <b>Google+</b>
-
-              <% end %>
+              <button class="btn btn-social btn-simple btn-google">
+                <i class="fa fa-google-plus-square border-right-none"></i> Share on Google+
+              </button>
             </div>
             <div class="col-md-3">
-              <%= link_to '#', class: "btn btn-primary btn-fill btn-lg color-linkedin" do %>
-                  <i class="fa fa-linkedin-square fa-lg"></i>   Find Us On <b>LinkedIn</b>
+              <button class="btn btn-social btn-simple btn-linkedin">
+                <i class="fa fa-linkedin-square border-right-none"></i> Connect with Linkedin
+              </button>
 
-              <% end %>
+
             </div>
 
           </div>
