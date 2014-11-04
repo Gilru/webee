@@ -25,57 +25,49 @@
 
     <% if @reviews.blank? %>
         <h3>No reviews writed</h3>
+
+        <%= link_to 'Back Project', projects_path %>
     <% else %>
         <%= link_to "Write Review", new_project_review_path(@project) %>
 
-        <table class="table">
 
-          <thead>
-          <tr>
-            <th class="col-md-3"></th>
-            <th class="col-md-9"></th>
+<% @reviews.each do |review| %>
+    <div class="media">
+      <a class="pull-left" href="#">
+        <div class="avatar">
+          <img class="media-object" alt="Tim Picture" src="<%= review.user.profileimg.url %>">
+        </div>
+      </a>
+
+      <div class="media-body">
+
+        <h4 class="media-heading"><%= review.user.name.capitalize %></h4>
+        <h6 class="pull-right text-muted"><time><%= review.created_at.strftime("%-m/%-d/%y") %></time></h6>
+
+        <p><%= h(review.comment).gsub(/\n/, '<br/>').html_safe %></p>
 
 
-          </tr>
-          </thead>
 
-
-          <tbody>
-          <% @reviews.each do |review| %>
-              <tr>
-                <td>
-                  <p>
-                    <%= image_tag review.user.profileimg.url(:medium), class: "image-profile margin-profile img-circle border-profile" %>
-                    <%= "#{review.user.name.capitalize}" %>
-
-                  <p>
-                    <time><%= review.created_at.strftime("%-m/%-d/%y") %></time>
-                  </p>
-                  </p>
-                </td>
-
-                <td>
-                  <p><%= h(review.comment).gsub(/\n/, '<br/>').html_safe %></p>
-                </td>
-              </tr>
-              <% if user_signed_in? && current_user.manager? %>
-                  <%= link_to "Edit Review", edit_project_review_path(@project, review) %>
-                  <%= link_to "Delete", project_review_path(@project, review), method: :delete,
-                              data: {confirm: "Are you sure you want delete this review (#{review.comment})"} %>
-              <% end %>
-
-          <% end %>
-          </tbody>
-        </table>
-
-    <% end %>
-    <br/>
-
+        <div class="media-footer">
+          <i class="fa fa-reply text-info"></i> Send Another Message
+          <a href="#" class="btn btn-default btn-simple pull-right">
+            <% if user_signed_in? && current_user.manager? %>
+                <%= link_to "Edit Review", edit_project_review_path(@project, review) %>
+                <%= link_to "Delete", project_review_path(@project, review), method: :delete,
+                            data: {confirm: "Are you sure you want delete this review (#{review.comment})"} %>
+            <% end %>
+          </a>
+        </div>
+      </div>
+    </div>
+<% end %>
+    </br>
 
     <% if user_signed_in? && current_user.manager? %>
         <%= link_to 'Edit Project', edit_project_path(@project) %> |
     <% end %>
-    <%= link_to 'Back Project', projects_path %>
 
   </div>
 </div>
+
+<% end %>
