@@ -1,15 +1,23 @@
 <div id="page-content-wrapper">
   <div class="container-fluid">
+    <a href="#menu-toggle" class="btn btn-success btn-rounded" id="menu-toggle">Toggle Menu</a>
     <div class="row">
       <div class="col-lg-12">
 
         <% if user_signed_in? && current_user.manager? %>
             <!--form search beginning-->
             <%= form_tag search_path, method: :get do %>
-                <p>
-                  <%= text_field_tag :search, params[:search], class: "form-control" %>
-                  <%= submit_tag "Search", name: nil, class: "btn btn-default" %>
-                </p>
+                <br>
+
+                <div class="row">
+                  <div class="col-md-10">
+                    <%= text_field_tag :search, params[:search], class: "form-control" %>
+                  </div>
+                  <div class="col-md-2">
+                    <%= submit_tag "Search", name: nil, class: "btn btn-primary btn-lg" %>
+                  </div>
+                </div>
+
             <% end %>
 
 

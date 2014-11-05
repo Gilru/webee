@@ -1,7 +1,7 @@
 <%= form_for([@project,@review]) do |f| %>
   <% if @review.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h2>
+    <div id="error_explanation" class="red">
+      <h2><%= pluralize(@review.errors.count, "error") %> prohibited this message from being saved:</h2>
 
       <ul>
       <% @review.errors.full_messages.each do |message| %>
@@ -19,11 +19,11 @@
       </a>
 
   <div class="media-body">
-    <%= f.label :comment %><br>
+    <%= f.label :comment, "message" %><br>
     <%= f.text_area :comment, class: "form-control", placeholder: "please write your message here" %>
   </div>
   <div class="media-footer">
-    <%= f.submit "Send Message", class:"btn btn-info btn-fill pull-right" %>
+    <%= f.submit "Send Message", class:"btn btn-info btn-lg pull-right" %>
   </div>
     </div>
 <% end %>

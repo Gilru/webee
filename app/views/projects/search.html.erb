@@ -1,57 +1,105 @@
-
 <!-- Page Content -->
 <div id="page-content-wrapper">
   <div class="container-fluid">
-    <div class="row">
 
-        <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
+    <a href="#menu-toggle" class="btn btn-success btn-rounded" id="menu-toggle">Toggle Menu</a>
 
-      <!--===============================================add of project=======================================-->
+    <!--===============================================add of project=======================================-->
 
-      <h1>Listing projects</h1>
+    <% if user_signed_in? && current_user.manager? %>
+        <br>
+        <br>
 
-      <table class="table table-striped table-hover">
-        <thead>
-        <tr>
-          <th>Title</th>
-          <th>Description</th>
-          <th>Progress</th>
-          <th>Link</th>
-          <th>User</th>
-          <th>Id project</th>
-          <th>Write reviews</th>
-
-          <th colspan="3"></th>
-        </tr>
-        </thead>
-
-        <tbody>
-        <% @projects.each do |project| %>
-            <tr>
-              <td><%= project.title %></td>
-              <td><%= project.description %></td>
-              <td><%= project.progress %></td>
-              <td><%= project.link %></td>
-              <td><%= project.user.name %></td>
-              <td><%= project.id %></td>
-              <td><%= link_to "Write new review",new_project_review_path(project)%></td>
-              <td><%= link_to 'Show', project %></td>
-              <td><%= link_to 'Edit', edit_project_path(project) %></td>
-              <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <div class="row">
+          <div class="col-md-10"></div>
+          <div class="col-md-2">
+            <%= link_to new_project_path do %>
+                <i class="ti-plus size-ic-new-blog"></i>
+            <% end %>
+          </div>
+        </div>
+        <br>
+        <br>
+    <% end %>
 
 
 
-            </tr>
-        <% end %>
-        </tbody>
-      </table>
+    <h1 class="thin center">Listing projects</h1>
 
-      <br>
+    <table class="table table-striped table-hover table-bordered">
+      <thead>
+      <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Progress</th>
+        <th>Link</th>
+        <th>User</th>
+        <th>Id project</th>
+        <th>Write reviews</th>
 
-      <%= link_to 'New Project', new_project_path %>
+        <th colspan="3"></th>
+      </tr>
+      </thead>
 
-      <!--===============================================end of project=======================================-->
-    </div>
+      <tbody>
+      <!--========================security============================-->
+
+      <% @projects.each do |project| %>
+          <% if user_signed_in? %>
+              <% if (project.user == current_user) || (current_user.manager?) %>
+
+                  <!--========================security============================-->
+
+                  <tr>
+                    <td><%= project.title %></td>
+                    <td><%= truncate(project.description,length: 22) %></td>
+                    <td><%= number_to_percentage(project.progress,precision: 0) %>
+                      <progress class="progress" value="<%= project.progress %>" max="100">
+                        <%= number_to_percentage(project.progress) %>
+                      </progress>
+                    </td>
+                    <td><%= link_to is_link_available(project.link),project.link,class: "text-info" %></td>
+                    <td><%= project.user.name %></td>
+                    <td><%= project.id %></td>
+                    <td><%= link_to new_project_review_path(project), class:"text-primary" do %>
+                          Question Click <i class="ti-help-alt"></i>
+                      <% end %>
+                    </td>
+                    <td><%= link_to project, class: "text-success" do %>
+                          consult <i class="ti-eye"></i>
+                      <% end %>
+                    </td>
+                    <% if user_signed_in? && current_user.manager? %>
+                        <td><%= link_to edit_project_path(project), class: "text-warning" do %>
+                              Edit Project<i class="ti-write"></i>
+                          <% end %>
+                        </td>
+                        <td><%= link_to project, method: :delete, data: {confirm: 'Are you sure?'}, class: "text-danger" do%>
+                              <i class="ti-trash"></i> Destroy
+                          <% end %>
+                        </td>
+                    <% end %>
+
+
+                  </tr>
+              <% end %>
+          <% end %>
+
+      <% end %>
+      </tbody>
+    </table>
+
+    <br>
+    <% if user_signed_in? && current_user.manager? %>
+        <%= link_to 'New Project', new_project_path %>
+    <% end %>
+
+    <!--===============================================end of project=======================================-->
   </div>
 </div>
+</div>
 <!-- /#page-content-wrapper -->
+
+
+
+

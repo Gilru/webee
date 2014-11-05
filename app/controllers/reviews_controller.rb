@@ -43,7 +43,7 @@ class ReviewsController < ApplicationController
           UserNotifier.send_confirmation_review(@review.project.user, self).deliver
         end
 
-        format.html { redirect_to @project, notice: 'Review was successfully created.' }
+        format.html { redirect_to @project, notice: 'your message has been successfully sent' }
         format.json { render :show, status: :created, location: @review }
       else
         format.html { render :new }

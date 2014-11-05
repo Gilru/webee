@@ -26,7 +26,7 @@
   </div>
   <div class="form-group">
     <%= f.label :link %><br>
-    <%= f.text_field :link, class: "form-control" %>
+    <%= f.url_field :link, class: "form-control" %>
   </div>
     <div class="form-group">
       <%= f.label :description %><br>
@@ -35,4 +35,5 @@
   <div class="actions">
     <%= f.submit class:"btn btn-default" %>
   </div>
+  <br>
 <% end %>

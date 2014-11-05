@@ -127,6 +127,13 @@
 
         <% end %>
 
+        <%= link_to profile_path,
+                    class: "margin-menu-back navbar-nav text-primary
+                light #{yield(:go_back_profile_visibility).presence || 'hidden'}" do %>
+            <i class="ti-arrow-circle-left"></i> Go Back To My Profile
+
+        <% end %>
+
 
         <ul class="nav navbar-nav navbar-right">
           <% if user_signed_in? %>
