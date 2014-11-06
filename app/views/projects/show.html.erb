@@ -3,32 +3,62 @@
 
     <p id="notice"><%= notice %></p>
 
-    <p>
-      <strong>Title:</strong>
-      <%= @project.title %>
-    </p>
+    <div class="card">
+      <div class="content">
+        <h1 class="thin"><strong class="color-title">Project Title:</strong>
+          <span class="color-title-growth"><%= @project.title %></span></h1>
 
-    <p>
-      <strong>Description:</strong>
-      <%= @project.description %>
-    </p>
+        <p>
+          <strong>Description:</strong>
+          <%= @project.description %>
+        </p>
 
-    <p>
-      <strong>Progress:</strong>
-      <%= @project.progress %>
-    </p>
+        <p>
+          <strong>Progress:</strong>
+          <%= number_to_percentage(@project.progress, precision: 0) %>
+          <progress class="progress style-pro" value="25" max="100">
+            25%
+          </progress>
+        </p>
 
-    <p>
-      <strong>Link:</strong>
-      <%= @project.link %>
-    </p>
+        <p>
+          <strong>Link:</strong>
+          <%= link_to is_link_available(@project.link),@project.link%>
+        </p>
+        <a href="#">
+        </a>
+
+        <div class="footer">
+          <div class="author">
+            <a href="#">
+              <img src="<%= @project.user.profileimg.url %>" alt="profile user" class="avatar">
+              <span> <%= @project.user.name %> </span>
+            </a>
+          </div>
+          <div class="stats pull-right">
+            <i class="fa fa-clock-o"></i> Created
+            <%= time_ago_in_words(@project.created_at) %> ago
+          </div>
+        </div>
+      </div>
+    </div>
 
     <% if @reviews.blank? %>
         <h3>No reviews writed</h3>
 
         <%= link_to 'Back Project', projects_path %>
     <% else %>
-        <%= link_to "Write Review", new_project_review_path(@project) %>
+
+
+        <div class="row">
+          <div class="col-md-10"></div>
+          <div class="col-md-2">
+            <%= link_to new_project_review_path(@project),
+                        class: "btn btn-round btn-fill btn-google" do %>
+                <i class="ti-pencil-alt write-quest-pro-ic-size"></i>
+            <% end %>
+          </div>
+        </div>
 
 
 <% @reviews.each do |review| %>
@@ -41,7 +71,9 @@
 
       <div class="media-body">
 
-        <h4 class="media-heading"><%= review.user.name.capitalize %></h4>
+        <h4 class="media-heading"><%= review.user.name.capitalize %>
+          <span class="label <%= put_color_admin_or_client(review.user) %>">
+            <%= is_admin_or_client(review.user) %></span></h4>
         <h6 class="pull-right text-muted"><time><%= review.created_at.strftime("%-m/%-d/%y") %></time></h6>
 
         <p><%= h(review.comment).gsub(/\n/, '<br/>').html_safe %></p>
@@ -49,7 +81,7 @@
 
 
         <div class="media-footer">
-          <i class="fa fa-reply text-info"></i> Send Another Message
+          <i class="fa fa-reply text-info"></i> <%= link_to "Reply", new_project_review_path(@project) %>
           <a href="#" class="btn btn-default btn-simple pull-right">
             <% if user_signed_in? && current_user.manager? %>
                 <%= link_to "Edit Review", edit_project_review_path(@project, review) %>

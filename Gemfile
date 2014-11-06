@@ -1,6 +1,6 @@
 source 'https://code.stripe.com'
 source 'https://rubygems.org'
-
+ruby '2.1.4', :patchlevel => '265'
 
 
 gem 'rails', '~> 4.1.5'
