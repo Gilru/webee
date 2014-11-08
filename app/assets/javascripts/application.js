@@ -13,7 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
-//= require 'icheck'
 //= require jquery.slimscroll.min
 //= require jquery.easing
 //= require jquery-placeholder

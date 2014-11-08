@@ -3,6 +3,21 @@
 
     <p id="notice"><%= notice %></p>
 
+    <div class="row">
+      <div class="col-md-3">
+        <a href="#menu-toggle" class="btn btn-success btn-rounded" id="menu-toggle">Toggle Menu</a>
+      </div>
+      <div class="col-md-9">
+        
+        <h4>
+          <%= link_to projects_path, class: "text-info" do %>
+              <i class="ti-arrow-left"></i>
+              <span class="light">Go Back To Project List</span>
+          <% end %>
+        </h4>
+      </div>
+    </div>
+
     <div class="card">
       <div class="content">
         <h1 class="thin"><strong class="color-title">Project Title:</strong>
@@ -16,7 +31,7 @@
         <p>
           <strong>Progress:</strong>
           <%= number_to_percentage(@project.progress, precision: 0) %>
-          <progress class="progress style-pro" value="25" max="100">
+          <progress class="progress style-pro" value="<%= @project.progress %>" max="100">
             25%
           </progress>
         </p>
