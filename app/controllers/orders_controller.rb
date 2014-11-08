@@ -51,7 +51,7 @@ class OrdersController < ApplicationController
     @order.buyer_id = current_user.id
     @order.seller_id = @seller.id
 
-    Stripe.api_key = Figaro.env.STRIPE_API_KEY!
+    Stripe.api_key = Figaro.env.STRIPE_API_KEY
     token = params[:stripeToken]
 
     begin
