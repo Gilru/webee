@@ -1,7 +1,7 @@
 app_key: "dw98ddnu1epkbyf"
-app_secret: <%= ENV["APP_SECRET"] %>
+app_secret: <%= Figaro.env.APP_SECRET! %>
 access_token: "l2enur2mjf8c6uf2"
-access_token_secret: <%= ENV["APP_TOKEN_SECRET"] %>
+access_token_secret: <%= Figaro.env.APP_TOKEN_SECRET %>
 user_id: "324032829"
 access_type: "app_folder"
 
